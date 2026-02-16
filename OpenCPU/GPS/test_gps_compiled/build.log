@@ -276,14 +276,14 @@ example/utility.c:42:11: warning: unused variable 'pChar2' [-Wunused-variable]
 example/utility.c: In function 'Analyse_Command':
 example/utility.c:103:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
 example/utility.c:120:17: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-custom/main.c: In function 'GPS_On':
-custom/main.c:43:5: warning: implicit declaration of function 'RIL_GPS_Open' [-Wimplicit-function-declaration]
-custom/main.c: In function 'Send_SMS':
-custom/main.c:59:5: warning: pointer targets in passing argument 4 of 'RIL_SMS_SendSMS_Text' differ in signedness [-Wpointer-sign]
+custom/main.c: In function 'SendSMS':
+custom/main.c:48:5: warning: pointer targets in passing argument 4 of 'RIL_SMS_SendSMS_Text' differ in signedness [-Wpointer-sign]
 In file included from custom/main.c:6:0:
 ril/inc/ril_sms.h:316:12: note: expected 'u8 *' but argument is of type 'char *'
+custom/main.c: In function 'GPS_On':
+custom/main.c:55:5: warning: implicit declaration of function 'RIL_GPS_Open' [-Wimplicit-function-declaration]
 custom/main.c: In function 'proc_main_task':
-custom/main.c:128:17: warning: implicit declaration of function 'RIL_GPS_Read' [-Wimplicit-function-declaration]
+custom/main.c:182:13: warning: implicit declaration of function 'RIL_GPS_Read' [-Wimplicit-function-declaration]
 custom/fota/src/fota_ftp.c: In function 'FTP_FotaMain':
 custom/fota/src/fota_ftp.c:44:9: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
 custom/fota/src/fota_ftp.c: In function 'FTP_Callback_OnDownload':
