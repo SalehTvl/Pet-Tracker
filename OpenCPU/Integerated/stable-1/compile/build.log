@@ -1,0 +1,302 @@
+ril/src/ril_atResponse.c: In function 'Ql_RIL_AT_SetErrCode':
+ril/src/ril_atResponse.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ril/src/ril_audio.c: In function 'ATResponse_AUD_handler':
+ril/src/ril_audio.c:398:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsreg':
+ril/src/ril_ble.c:120:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatss':
+ril/src/ril_ble.c:168:10: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsc':
+ril/src/ril_ble.c:245:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsd':
+ril/src/ril_ble.c:311:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsst':
+ril/src/ril_ble.c:381:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsind':
+ril/src/ril_ble.c:461:9: warning: unused variable 'result' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsrsp':
+ril/src/ril_ble.c:513:9: warning: unused variable 'result' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsl':
+ril/src/ril_ble.c:559:9: warning: unused variable 'result' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_SetLeTxPwr':
+ril/src/ril_ble.c:597:9: warning: unused variable 'result' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'OnURCHandler_BTGatscon':
+ril/src/ril_ble.c:832:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_GetLeLocalAddr':
+ril/src/ril_ble.c:891:5: warning: passing argument 3 of 'Ql_RIL_SendATCmd' from incompatible pointer type [enabled by default]
+In file included from ril/src/ril_ble.c:45:0:
+ril/inc/ril.h:187:12: note: expected 'Callback_ATResponse' but argument is of type 'void (*)(char *, u32,  void *)'
+ril/src/ril_ble.c: In function 'OnURCHandler_BTGatwreq':
+ril/src/ril_ble.c:914:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'OnURCHandler_BTGatewreq':
+ril/src/ril_ble.c:946:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'OnURCHandler_BTGatrreq':
+ril/src/ril_ble.c:976:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'OnURCHandler_BTpxpscon':
+ril/src/ril_ble.c:1005:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'OnURCHandler_BTfmpscon':
+ril/src/ril_ble.c:1027:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'ATRsp_QBTLEADDR_Hdlr':
+ril/src/ril_ble.c:1411:3: warning: 'return' with a value, in function returning void [enabled by default]
+ril/src/ril_ble.c:1417:5: warning: 'return' with a value, in function returning void [enabled by default]
+ril/src/ril_ble.c:1423:3: warning: 'return' with a value, in function returning void [enabled by default]
+ril/src/ril_ble.c:1428:3: warning: 'return' with a value, in function returning void [enabled by default]
+ril/src/ril_ble.c:1431:2: warning: 'return' with a value, in function returning void [enabled by default]
+ril/src/ril_ble.c: At top level:
+ril/src/ril_ble.c:53:12: warning: 'ATRsp_QBTGatsi_Hdlr' declared 'static' but never defined [-Wunused-function]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcreg':
+ril/src/ril_ble_clinet.c:96:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcscan':
+ril/src/ril_ble_clinet.c:122:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatccon':
+ril/src/ril_ble_clinet.c:152:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcss':
+ril/src/ril_ble_clinet.c:222:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcgc':
+ril/src/ril_ble_clinet.c:240:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcgd':
+ril/src/ril_ble_clinet.c:278:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcrc':
+ril/src/ril_ble_clinet.c:314:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcwc':
+ril/src/ril_ble_clinet.c:342:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcwd':
+ril/src/ril_ble_clinet.c:371:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcrd':
+ril/src/ril_ble_clinet.c:402:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcrn':
+ril/src/ril_ble_clinet.c:430:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcgdt':
+ril/src/ril_ble_clinet.c:454:13: warning: unused variable 'n' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:454:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcl':
+ril/src/ril_ble_clinet.c:473:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcscan':
+ril/src/ril_ble_clinet.c:495:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatccon':
+ril/src/ril_ble_clinet.c:532:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcss':
+ril/src/ril_ble_clinet.c:562:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcgc':
+ril/src/ril_ble_clinet.c:613:5: warning: pointer targets in passing argument 1 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:40:0:
+include/ql_stdlib.h:47:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:614:5: warning: pointer targets in passing argument 2 of 'Ql_StrPrefixMatch' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:46:0:
+ril/inc/ril_util.h:47:13: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:625:9: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+ril/src/ril_ble_clinet.c:625:36: warning: incompatible implicit declaration of built-in function 'strlen' [enabled by default]
+ril/src/ril_ble_clinet.c:625:9: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+ril/src/ril_ble_clinet.c:625:9: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:606:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcgd':
+ril/src/ril_ble_clinet.c:642:5: warning: pointer targets in passing argument 1 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:40:0:
+include/ql_stdlib.h:47:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:643:5: warning: pointer targets in passing argument 2 of 'Ql_StrPrefixMatch' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:46:0:
+ril/inc/ril_util.h:47:13: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:636:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcrc':
+ril/src/ril_ble_clinet.c:671:5: warning: pointer targets in passing argument 1 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:40:0:
+include/ql_stdlib.h:47:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:672:5: warning: pointer targets in passing argument 2 of 'Ql_StrPrefixMatch' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:46:0:
+ril/inc/ril_util.h:47:13: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:665:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcrd':
+ril/src/ril_ble_clinet.c:696:5: warning: pointer targets in passing argument 1 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:40:0:
+include/ql_stdlib.h:47:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:697:5: warning: pointer targets in passing argument 2 of 'Ql_StrPrefixMatch' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:46:0:
+ril/inc/ril_util.h:47:13: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:690:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcn':
+ril/src/ril_ble_clinet.c:722:5: warning: pointer targets in passing argument 1 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:40:0:
+include/ql_stdlib.h:47:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:723:5: warning: pointer targets in passing argument 2 of 'Ql_StrPrefixMatch' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:46:0:
+ril/inc/ril_util.h:47:13: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:716:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'ATRsp_QBTGatcrn_Hdlr':
+ril/src/ril_ble_clinet.c:828:7: warning: unused variable 'used' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:827:5: warning: unused variable 'result' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:826:6: warning: unused variable 'char_prop' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:825:8: warning: unused variable 'char_uuid' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:824:9: warning: unused variable 'char_inst' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:823:6: warning: unused variable 'is_primary' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:822:6: warning: unused variable 'service_inst' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:821:5: warning: unused variable 'service_uuid' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:820:6: warning: unused variable 'conn_id' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:819:7: warning: unused variable 'client_id' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:856:1: warning: control reaches end of non-void function [-Wreturn-type]
+ril/src/ril_bluetooth.c: In function 'OnURCHandler_BTDisconn':
+ril/src/ril_bluetooth.c:1531:10: warning: unused variable 'profileId' [-Wunused-variable]
+ril/src/ril_gps.c: In function 'RIL_GPS_Read':
+ril/src/ril_gps.c:145:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_gps.c:36:0:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_gps.c:145:5: warning: pointer targets in passing argument 1 of 'Ql_strncmp' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_gps.c:36:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_gps.c:158:9: warning: pointer targets in passing argument 2 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_gps.c:36:0:
+include/ql_stdlib.h:47:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_gps.c: In function 'ATResponse_GPSRead_Hdlr':
+ril/src/ril_gps.c:169:7: warning: unused variable 'strTmp' [-Wunused-variable]
+ril/src/ril_gps.c:167:8: warning: unused variable 'p2' [-Wunused-variable]
+ril/src/ril_gps.c:166:8: warning: unused variable 'p1' [-Wunused-variable]
+ril/src/ril_gps.c: In function 'OnURCHandler_GPSCMD':
+ril/src/ril_gps.c:336:4: warning: passing argument 1 of 'callback_GPSCMD' discards 'const' qualifier from pointer target type [enabled by default]
+ril/src/ril_gps.c:336:4: note: expected 'char *' but argument is of type 'const char *'
+ril/src/ril_location.c: In function 'ATResponse_GetLocation_Ex_Handler':
+ril/src/ril_location.c:78:11: warning: unused variable 'p2' [-Wunused-variable]
+ril/src/ril_location.c:77:11: warning: unused variable 'p1' [-Wunused-variable]
+ril/src/ril_location.c: In function 'OnURCHandler_QCELLLocation':
+ril/src/ril_location.c:176:11: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+ril/src/ril_location.c:177:9: warning: pointer targets in passing argument 1 of 'Ql_strstr' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_location.c:38:0:
+include/ql_stdlib.h:55:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c: In function 'RIL_MQTT_QMTSUB':
+ril/src/ril_mqtt.c:179:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:179:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:183:11: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:183:11: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:185:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:185:3: warning: pointer targets in passing argument 1 of 'Ql_strncat' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:50:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:185:3: warning: pointer targets in passing argument 2 of 'Ql_strncat' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:50:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:189:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:189:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:190:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:190:5: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+In file included from ril/inc/ril_mqtt.h:37:0,
+                 from ril/src/ril_mqtt.c:33:
+ril/inc/ril.h:187:12: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c: In function 'RIL_MQTT_QMTUNS':
+ril/src/ril_mqtt.c:239:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:239:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:243:11: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:243:11: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:245:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:245:3: warning: pointer targets in passing argument 1 of 'Ql_strncat' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:50:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:245:3: warning: pointer targets in passing argument 2 of 'Ql_strncat' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:50:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:249:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:249:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:251:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:251:5: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+In file included from ril/inc/ril_mqtt.h:37:0,
+                 from ril/src/ril_mqtt.c:33:
+ril/inc/ril.h:187:12: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c: In function 'ATResponse_QMTPUB_handler':
+ril/src/ril_mqtt.c:302:8: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:309:11: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:314:11: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:319:11: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:299:9: warning: unused variable 'i' [-Wunused-variable]
+ril/src/ril_network.c: In function 'ATRsp_COPS_Handler':
+ril/src/ril_network.c:501:14: warning: unused variable 'str' [-Wunused-variable]
+ril/src/ril_ntp.c: In function 'OnURCHandler_NTPCMD':
+ril/src/ril_ntp.c:50:4: warning: passing argument 1 of 'callback_NTPCMD' discards 'const' qualifier from pointer target type [enabled by default]
+ril/src/ril_ntp.c:50:4: note: expected 'char *' but argument is of type 'const char *'
+ril/src/ril_system.c: In function 'QSDK_Get_Strlen':
+ril/src/ril_system.c:457:1: warning: control reaches end of non-void function [-Wreturn-type]
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_OPEN':
+ril/src/ril_urc.c:698:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_CONN':
+ril/src/ril_urc.c:734:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_SUB':
+ril/src/ril_urc.c:769:10: warning: array subscript has type 'char' [-Wchar-subscripts]
+ril/src/ril_urc.c:773:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+ril/src/ril_urc.c:778:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_PUB':
+ril/src/ril_urc.c:819:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_TUNS':
+ril/src/ril_urc.c:848:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_STATE':
+ril/src/ril_urc.c:874:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_CLOSE':
+ril/src/ril_urc.c:902:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_DISC':
+ril/src/ril_urc.c:932:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+example/nema_pro.c: In function 'read_gps_I2C_buffer':
+example/nema_pro.c:172:9: warning: unused variable 'realwrlen' [-Wunused-variable]
+example/nema_pro.c: In function 'extract_nmea':
+example/nema_pro.c:192:5: warning: unused variable 'nmea_buf' [-Wunused-variable]
+example/nema_pro.c:191:9: warning: unused variable 'realwrlen' [-Wunused-variable]
+example/nema_pro.c: In function 'iop_inst_avail':
+example/nema_pro.c:285:21: warning: operation on 'id_que_tail' may be undefined [-Wsequence-point]
+example/nema_pro.c: In function 'iop_get_inst':
+example/nema_pro.c:323:13: warning: operation on 'idx' may be undefined [-Wsequence-point]
+example/nema_pro.c: In function 'iop_pcrx_nmea':
+example/nema_pro.c:355:25: warning: operation on 'id_que_head' may be undefined [-Wsequence-point]
+example/nema_pro.c:360:29: warning: operation on 'id_que_tail' may be undefined [-Wsequence-point]
+example/nema_pro.c:381:29: warning: operation on 'rx_que_head' may be undefined [-Wsequence-point]
+example/nema_pro.c:387:29: warning: operation on 'rx_que_head' may be undefined [-Wsequence-point]
+example/nema_pro.c:407:25: warning: operation on 'rx_que_head' may be undefined [-Wsequence-point]
+example/utility.c: In function 'Check_Separator':
+example/utility.c:45:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+example/utility.c:52:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+example/utility.c:59:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+example/utility.c:42:11: warning: unused variable 'pChar2' [-Wunused-variable]
+example/utility.c: In function 'Analyse_Command':
+example/utility.c:103:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+example/utility.c:120:17: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+custom/main.c: In function 'Callback_Timer':
+custom/main.c:199:13: warning: pointer targets in passing argument 2 of 'RIL_MQTT_QMTOPEN' differ in signedness [-Wpointer-sign]
+In file included from custom/main.c:11:0:
+ril/inc/ril_mqtt.h:192:5: note: expected 'u8 *' but argument is of type 'char *'
+custom/main.c:236:13: warning: pointer targets in passing argument 1 of 'RIL_GPS_Read' differ in signedness [-Wpointer-sign]
+In file included from custom/main.c:15:0:
+ril/inc/ril_gps.h:107:5: note: expected 'u8 *' but argument is of type 'char *'
+custom/main.c:236:13: warning: pointer targets in passing argument 2 of 'RIL_GPS_Read' differ in signedness [-Wpointer-sign]
+In file included from custom/main.c:15:0:
+ril/inc/ril_gps.h:107:5: note: expected 'u8 *' but argument is of type 'char *'
+custom/main.c: In function 'Get_Battery_Level':
+custom/main.c:327:5: warning: implicit declaration of function 'Ql_GetPowerSupply' [-Wimplicit-function-declaration]
+custom/fota/src/fota_ftp.c: In function 'FTP_FotaMain':
+custom/fota/src/fota_ftp.c:44:9: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_ftp.c: In function 'FTP_Callback_OnDownload':
+custom/fota/src/fota_ftp.c:83:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_ftp.c:82:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_ftp.c: In function 'FTP_Program':
+custom/fota/src/fota_ftp.c:124:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_ftp.c: In function 'FTP_Callback_OnDownload':
+custom/fota/src/fota_ftp.c:315:35: warning: 'retValue' may be used uninitialized in this function [-Wmaybe-uninitialized]
+custom/fota/src/fota_ftp.c:198:10: note: 'retValue' was declared here
+custom/fota/src/fota_main.c: In function 'Ql_FOTA_StartUpgrade':
+custom/fota/src/fota_main.c:33:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
