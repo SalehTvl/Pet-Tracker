@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 // =====================
 // Config
 // =====================
-const MQTT_URL = process.env.MQTT_URL || "mqtt://localhost:1883";
+const MQTT_URL = process.env.MQTT_URL || "mqtt://0.0.0.0:1883";
 const MQTT_TOPIC = process.env.MQTT_TOPIC || "devices/+/telemetry";
 
 const C = Number(process.env.CAL_C || 1.0);
@@ -254,8 +254,8 @@ mqttClient.on("message", (_, message) => {
 // Start server
 // =====================
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`   Web app: http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`   Web app: http://0.0.0.0:${PORT}`);
   console.log(`   MQTT_URL=${MQTT_URL}`);
   console.log(`   MQTT_TOPIC=${MQTT_TOPIC}`);
   console.log(`   CAL_C=${C}   MAX_MPS=${MAX_METERS_PER_SEC}`);
