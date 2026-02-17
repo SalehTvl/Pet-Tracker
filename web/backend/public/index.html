@@ -6,38 +6,52 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
-    body { margin:0; font-family:system-ui,sans-serif; }
-    #top { display:flex; gap:8px; padding:12px; align-items:center; }
-    input { padding:8px; width:280px; }
-    button { padding:8px 12px; }
+    body { margin:0; font-family: system-ui, sans-serif; }
+    #top { display:flex; flex-wrap:wrap; gap:10px; padding:12px; align-items:center; }
+    input { padding:8px; }
+    button { padding:8px 12px; cursor:pointer; }
+    #map { height: calc(100vh - 140px); }
     #status { opacity:.75; }
     #info { padding: 0 12px 12px; font-size: 14px; }
-    #map { height: calc(100vh - 92px); }
+    .row { display:flex; gap:8px; align-items:center; }
     .muted { opacity:.7; }
+    .ok { color: #0a7; }
+    .err { color: #c00; }
   </style>
 </head>
 <body>
   <div id="top">
-    <input id="deviceId" placeholder="device_id (e.g. device_001)" />
-    <button id="track">Track</button>
-    <span id="status"></span>
+    <div class="row">
+      <input id="deviceId" placeholder="device_id (e.g. device_001)" style="width:240px;" />
+      <button id="track">Track</button>
+    </div>
+
+    <div class="row">
+      <input id="weight" type="number" step="0.1" placeholder="weight (kg)" style="width:140px;" />
+      <button id="setWeight">Set weight</button>
+      <span id="weightMsg" class="muted"></span>
+    </div>
+
+    <span id="status" class="muted"></span>
   </div>
+
   <div id="info"></div>
   <div id="map"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const backendBase = "http://localhost:3000";
+    const backendBase = ""; // same-origin
 
-    // Tehran default view
-    const map = L.map("map").setView([35.6892, 51.3890], 14);
+    const map = L.map("map").setView([35.6892, 51.3890], 14); // Tehran
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19 }).addTo(map);
 
     let marker = null;
     let timer = null;
+    let currentDeviceId = null;
 
     const statusEl = document.getElementById("status");
     const infoEl = document.getElementById("info");
+    const weightMsgEl = document.getElementById("weightMsg");
 
     function formatIranTimeFromMs(tsMs) {
       return new Intl.DateTimeFormat("fa-IR", {
@@ -47,6 +61,10 @@
       }).format(new Date(tsMs));
     }
 
+    function safe(v) {
+      return (v === null || v === undefined) ? "-" : v;
+    }
+
     async function poll(deviceId) {
       try {
         const r = await fetch(`${backendBase}/api/latest/${encodeURIComponent(deviceId)}`);
@@ -54,15 +72,31 @@
         const d = await r.json();
 
         const { lat, lon, alt, hdop } = d.gps;
-        const lastSeenIran = formatIranTimeFromMs(d.timestamp_ms);
 
-        statusEl.textContent = `Last seen (Iran): ${lastSeenIran}`;
+        const ageSec = Math.max(0, Math.floor((Date.now() - d.received_at_ms) / 1000));
+
+        statusEl.textContent = `Last seen (Iran): ${formatIranTimeFromMs(d.timestamp_ms)} | Updated: ${ageSec}s ago`;
+
+        if (d.weight != null && document.getElementById("weight").value === "") {
+          document.getElementById("weight").value = d.weight;
+        }
 
         infoEl.innerHTML = `
           <div><b>device_id:</b> ${d.device_id}</div>
-          <div><b>gps:</b> lat ${lat.toFixed(6)}, lon ${lon.toFixed(6)}${alt!=null ? `, alt ${alt}` : ""}${hdop!=null ? `, hdop ${hdop}` : ""}</div>
-          <div><b>battery:</b> ${d.battery ?? "-"} | <b>calories:</b> ${d.calories ?? "-"}</div>
-          <div class="muted"><b>timestamp (sec):</b> ${d.timestamp_sec}</div>
+
+          <div><b>Speed:</b> ${safe(d.speed_kmh)} km/h (${safe(d.speed_mps)} m/s)
+            <span class="muted">(computed over ${safe(d.seconds_since_prev)}s)</span>
+          </div>
+
+          <div><b>gps:</b> lat ${Number(lat).toFixed(6)}, lon ${Number(lon).toFixed(6)}
+            ${alt!=null ? `, alt ${alt}` : ""}${hdop!=null ? `, hdop ${hdop}` : ""}</div>
+
+          <div><b>battery:</b> ${safe(d.battery)} | <b>weight(kg):</b> ${safe(d.weight)}</div>
+
+          <div><b>distance today (km):</b> ${safe(d.distance_today_km)} |
+               <b>calories today:</b> ${safe(d.calories_today)}</div>
+
+          <div class="muted"><b>Iran day:</b> ${safe(d.day_key_iran)} | <b>timestamp(sec):</b> ${safe(d.timestamp_sec)}</div>
         `;
 
         if (!marker) {
@@ -80,13 +114,54 @@
       const deviceId = document.getElementById("deviceId").value.trim();
       if (!deviceId) return;
 
+      currentDeviceId = deviceId;
+
       if (timer) clearInterval(timer);
       if (marker) { map.removeLayer(marker); marker = null; }
+
       infoEl.innerHTML = "";
       statusEl.textContent = "…";
 
       poll(deviceId);
       timer = setInterval(() => poll(deviceId), 1000);
+    };
+
+    document.getElementById("setWeight").onclick = async () => {
+      const deviceId = currentDeviceId || document.getElementById("deviceId").value.trim();
+      const w = Number(document.getElementById("weight").value);
+
+      if (!deviceId) {
+        weightMsgEl.textContent = "Enter device_id first.";
+        weightMsgEl.className = "err";
+        return;
+      }
+      if (!Number.isFinite(w) || w <= 0) {
+        weightMsgEl.textContent = "Enter a valid weight (kg).";
+        weightMsgEl.className = "err";
+        return;
+      }
+
+      try {
+        const r = await fetch(`${backendBase}/api/device/${encodeURIComponent(deviceId)}/weight`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ weight: w })
+        });
+        if (!r.ok) throw new Error(await r.text());
+
+        weightMsgEl.textContent = "Weight saved ✅";
+        weightMsgEl.className = "ok";
+
+        poll(deviceId);
+
+        setTimeout(() => {
+          weightMsgEl.textContent = "";
+          weightMsgEl.className = "muted";
+        }, 1500);
+      } catch (e) {
+        weightMsgEl.textContent = "Failed to save weight.";
+        weightMsgEl.className = "err";
+      }
     };
   </script>
 </body>
