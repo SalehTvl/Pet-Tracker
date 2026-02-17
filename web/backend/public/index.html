@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>IoT Tracker</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    body { margin:0; font-family:system-ui,sans-serif; }
+    #top { display:flex; gap:8px; padding:12px; align-items:center; }
+    input { padding:8px; width:280px; }
+    button { padding:8px 12px; }
+    #status { opacity:.75; }
+    #info { padding: 0 12px 12px; font-size: 14px; }
+    #map { height: calc(100vh - 92px); }
+    .muted { opacity:.7; }
+  </style>
+</head>
+<body>
+  <div id="top">
+    <input id="deviceId" placeholder="device_id (e.g. device_001)" />
+    <button id="track">Track</button>
+    <span id="status"></span>
+  </div>
+  <div id="info"></div>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const backendBase = "http://localhost:3000";
+
+    // Tehran default view
+    const map = L.map("map").setView([35.6892, 51.3890], 14);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19 }).addTo(map);
+
+    let marker = null;
+    let timer = null;
+
+    const statusEl = document.getElementById("status");
+    const infoEl = document.getElementById("info");
+
+    function formatIranTimeFromMs(tsMs) {
+      return new Intl.DateTimeFormat("fa-IR", {
+        timeZone: "Asia/Tehran",
+        dateStyle: "medium",
+        timeStyle: "medium"
+      }).format(new Date(tsMs));
+    }
+
+    async function poll(deviceId) {
+      try {
+        const r = await fetch(`${backendBase}/api/latest/${encodeURIComponent(deviceId)}`);
+        if (!r.ok) throw new Error(await r.text());
+        const d = await r.json();
+
+        const { lat, lon, alt, hdop } = d.gps;
+        const lastSeenIran = formatIranTimeFromMs(d.timestamp_ms);
+
+        statusEl.textContent = `Last seen (Iran): ${lastSeenIran}`;
+
+        infoEl.innerHTML = `
+          <div><b>device_id:</b> ${d.device_id}</div>
+          <div><b>gps:</b> lat ${lat.toFixed(6)}, lon ${lon.toFixed(6)}${alt!=null ? `, alt ${alt}` : ""}${hdop!=null ? `, hdop ${hdop}` : ""}</div>
+          <div><b>battery:</b> ${d.battery ?? "-"} | <b>calories:</b> ${d.calories ?? "-"}</div>
+          <div class="muted"><b>timestamp (sec):</b> ${d.timestamp_sec}</div>
+        `;
+
+        if (!marker) {
+          marker = L.marker([lat, lon]).addTo(map).bindPopup(d.device_id).openPopup();
+          map.setView([lat, lon], 17);
+        } else {
+          marker.setLatLng([lat, lon]);
+        }
+      } catch (e) {
+        statusEl.textContent = "Waiting for data…";
+      }
+    }
+
+    document.getElementById("track").onclick = () => {
+      const deviceId = document.getElementById("deviceId").value.trim();
+      if (!deviceId) return;
+
+      if (timer) clearInterval(timer);
+      if (marker) { map.removeLayer(marker); marker = null; }
+      infoEl.innerHTML = "";
+      statusEl.textContent = "…";
+
+      poll(deviceId);
+      timer = setInterval(() => poll(deviceId), 1000);
+    };
+  </script>
+</body>
+</html>
