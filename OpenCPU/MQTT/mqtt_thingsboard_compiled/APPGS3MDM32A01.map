@@ -42,18 +42,10 @@ C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-non
                               libs/gcc/app_start.lib(lib_ril_sms.o) (__aeabi_idiv)
 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_dvmd_tls.o)
                               C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
-C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_addsubdf3.o)
-                              build\gcc\obj/custom/main.o (__aeabi_f2d)
 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_fixdfsi.o)
                               build\gcc\obj/ril/src/Ril_dtmf.o (__aeabi_d2iz)
 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_truncdfsf2.o)
                               build\gcc\obj/ril/src/ril_location.o (__aeabi_d2f)
-C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_addsubsf3.o)
-                              build\gcc\obj/custom/main.o (__aeabi_fsub)
-C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_muldivsf3.o)
-                              build\gcc\obj/custom/main.o (__aeabi_fdiv)
-C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_fixsfsi.o)
-                              build\gcc\obj/custom/main.o (__aeabi_f2iz)
 
 Allocating common symbols
 Common symbol       size              file
@@ -70,6 +62,7 @@ Fota_gprsCfg        0xb0              build\gcc\obj/custom/fota/src/fota_main.o
 FotaConfig          0x10              build\gcc\obj/custom/fota/src/fota_main.o
 id_que              0x600             build\gcc\obj/example/nema_pro.o
 u4PktInQueue        0x4               build\gcc\obj/example/nema_pro.o
+mqtt_payload        0x80              build\gcc\obj/custom/main.o
 id_que_tail         0x2               build\gcc\obj/example/nema_pro.o
 id_que_head         0x2               build\gcc\obj/example/nema_pro.o
 MQTT_Recvhandler    0x4               libs/gcc/app_start.lib(ril_main.o)
@@ -245,6 +238,8 @@ Discarded input sections
  .text          0x00000000        0x0 build\gcc\obj/ril/src/ril_bluetooth.o
  .text.AtRsp_QBTCONND_Hdlr
                 0x00000000       0x24 build\gcc\obj/ril/src/ril_bluetooth.o
+ .text.BT_DevMngmt_Clean
+                0x00000000       0x40 build\gcc\obj/ril/src/ril_bluetooth.o
  .text.ATRsp_QBTSPPREAD_Hdlr
                 0x00000000      0x144 build\gcc\obj/ril/src/ril_bluetooth.o
  .text.ATRsp_QBTGPROF_Hdlr
@@ -293,6 +288,8 @@ Discarded input sections
                 0x00000000       0x58 build\gcc\obj/ril/src/ril_bluetooth.o
  .text.RIL_BT_StartScan
                 0x00000000       0xd0 build\gcc\obj/ril/src/ril_bluetooth.o
+ .text.RIL_BT_Initialize
+                0x00000000       0x44 build\gcc\obj/ril/src/ril_bluetooth.o
  .text.RIL_BT_PairReq
                 0x00000000       0x78 build\gcc\obj/ril/src/ril_bluetooth.o
  .text.RIL_BT_PairConfirm
@@ -379,10 +376,16 @@ Discarded input sections
                 0x00000000      0x128 build\gcc\obj/ril/src/ril_gps.o
  .text.ATResponse_QGNSSC_Handler
                 0x00000000       0xc4 build\gcc\obj/ril/src/ril_gps.o
+ .text.ATResponse_GPSRead_Hdlr
+                0x00000000      0x3c8 build\gcc\obj/ril/src/ril_gps.o
+ .text.RIL_GPS_Open
+                0x00000000       0xb4 build\gcc\obj/ril/src/ril_gps.o
  .text.RIL_GPS_SetRefLoc
                 0x00000000       0xb8 build\gcc\obj/ril/src/ril_gps.o
  .text.RIL_GPS_GetPowerState
                 0x00000000       0x78 build\gcc\obj/ril/src/ril_gps.o
+ .text.RIL_GPS_Read
+                0x00000000      0x12c build\gcc\obj/ril/src/ril_gps.o
  .text.RIL_GPS_Read_TimeSync_Status
                 0x00000000       0xb4 build\gcc\obj/ril/src/ril_gps.o
  .text.RIL_GPS_CMD_Send
@@ -393,6 +396,8 @@ Discarded input sections
                 0x00000000       0x84 build\gcc\obj/ril/src/ril_gps.o
  .text.RIL_GPS_EPO_Config_APN
                 0x00000000       0xe8 build\gcc\obj/ril/src/ril_gps.o
+ .rodata.str1.1
+                0x00000000      0x14c build\gcc\obj/ril/src/ril_gps.o
  .text          0x00000000        0x0 build\gcc\obj/ril/src/ril_http.o
  .data          0x00000000        0x0 build\gcc\obj/ril/src/ril_http.o
  .text.ATRsp_QHTTP_Handler
@@ -859,8 +864,6 @@ Discarded input sections
  .ARM.attributes
                 0x00000000       0x2b build\gcc\obj/example/utility.o
  .text          0x00000000        0x0 build\gcc\obj/custom/main.o
- .text.APP_DEBUG
-                0x00000000       0x64 build\gcc\obj/custom/main.o
  .text          0x00000000        0x0 build\gcc\obj/custom/fota/src/fota_ftp.o
  .data          0x00000000        0x0 build\gcc\obj/custom/fota/src/fota_ftp.o
  .bss           0x00000000       0xb0 build\gcc\obj/custom/fota/src/fota_ftp.o
@@ -1097,6 +1100,8 @@ Discarded input sections
  .text.Ql_itoa  0x00000000       0x9c libs/gcc/app_start.lib(stdlib_func.o)
  .text.Ql_strcat
                 0x00000000       0x80 libs/gcc/app_start.lib(stdlib_func.o)
+ .text.Ql_strncat
+                0x00000000       0x88 libs/gcc/app_start.lib(stdlib_func.o)
  .text.Ql_memcmp
                 0x00000000       0x70 libs/gcc/app_start.lib(stdlib_func.o)
  .text.Ql_memmove
@@ -1181,18 +1186,10 @@ Discarded input sections
                 0x00000000       0x18 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_divsi3.o)
  .data          0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_dvmd_tls.o)
- .data          0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_addsubdf3.o)
- .bss           0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_addsubdf3.o)
  .data          0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_fixdfsi.o)
  .bss           0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_fixdfsi.o)
  .data          0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_truncdfsf2.o)
  .bss           0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_truncdfsf2.o)
- .data          0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_addsubsf3.o)
- .bss           0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_addsubsf3.o)
- .data          0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_muldivsf3.o)
- .bss           0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_muldivsf3.o)
- .data          0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_fixsfsi.o)
- .bss           0x00000000        0x0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_fixsfsi.o)
 
 Memory Configuration
 
@@ -1210,7 +1207,7 @@ Linker script and memory map
  .initdata      0x102db040       0x2c libs/gcc/app_start.lib(ql_main.o)
                 0x102db040                GADLENTRY
 
-text            0x102db070      0xe40
+text            0x102db070      0x420
  *(.text)
  .text          0x102db070       0x4c libs/gcc/app_start.lib(ocpu_init.o)
                 0x102db070                _OCPU_InitUserMem
@@ -1225,906 +1222,830 @@ text            0x102db070      0xe40
  .text          0x102db380        0x4 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_dvmd_tls.o)
                 0x102db380                __aeabi_idiv0
                 0x102db380                __aeabi_ldiv0
- .text          0x102db384      0x41c C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_addsubdf3.o)
-                0x102db384                __aeabi_drsub
-                0x102db38c                __aeabi_dsub
-                0x102db38c                __subdf3
-                0x102db390                __aeabi_dadd
-                0x102db390                __adddf3
-                0x102db6a0                __floatunsidf
-                0x102db6a0                __aeabi_ui2d
-                0x102db6c4                __floatsidf
-                0x102db6c4                __aeabi_i2d
-                0x102db6ec                __aeabi_f2d
-                0x102db6ec                __extendsfdf2
-                0x102db72c                __floatundidf
-                0x102db72c                __aeabi_ul2d
-                0x102db740                __floatdidf
-                0x102db740                __aeabi_l2d
- .text          0x102db7a0       0x5c C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_fixdfsi.o)
-                0x102db7a0                __aeabi_d2iz
-                0x102db7a0                __fixdfsi
- .text          0x102db7fc       0xa0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_truncdfsf2.o)
-                0x102db7fc                __truncdfsf2
-                0x102db7fc                __aeabi_d2f
- .text          0x102db89c      0x2ac C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_addsubsf3.o)
-                0x102db89c                __aeabi_frsub
-                0x102db8a4                __subsf3
-                0x102db8a4                __aeabi_fsub
-                0x102db8a8                __aeabi_fadd
-                0x102db8a8                __addsf3
-                0x102dba64                __aeabi_ui2f
-                0x102dba64                __floatunsisf
-                0x102dba6c                __aeabi_i2f
-                0x102dba6c                __floatsisf
-                0x102dba8c                __aeabi_ul2f
-                0x102dba8c                __floatundisf
-                0x102dba9c                __aeabi_l2f
-                0x102dba9c                __floatdisf
- .text          0x102dbb48      0x2f8 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_muldivsf3.o)
-                0x102dbb48                __mulsf3
-                0x102dbb48                __aeabi_fmul
-                0x102dbce0                __aeabi_fdiv
-                0x102dbce0                __divsf3
- .text          0x102dbe40       0x5c C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_fixsfsi.o)
-                0x102dbe40                __aeabi_f2iz
-                0x102dbe40                __fixsfsi
- *fill*         0x102dbe9c        0x4 
- .text.__stub   0x102dbea0        0xc linker stubs
+ .text          0x102db384       0x5c C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_fixdfsi.o)
+                0x102db384                __aeabi_d2iz
+                0x102db384                __fixdfsi
+ .text          0x102db3e0       0xa0 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_truncdfsf2.o)
+                0x102db3e0                __truncdfsf2
+                0x102db3e0                __aeabi_d2f
+ .text.__stub   0x102db480        0xc linker stubs
 
-.glue_7         0x102dbeb0        0x0
+.glue_7         0x102db490        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x102dbeb0        0x0
+.glue_7t        0x102db490        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x102dbeb0        0x0
+.vfp11_veneer   0x102db490        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x102dbeb0        0x0
+.v4_bx          0x102db490        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x102dbeb0        0x0
+.iplt           0x102db490        0x0
  .iplt          0x00000000        0x0 build\gcc\obj/custom/config/custom_sys_cfg.o
 
 .text.Ql_RIL_AT_SetErrCode
-                0x102dbeb0       0x10
+                0x102db490       0x10
  .text.Ql_RIL_AT_SetErrCode
-                0x102dbeb0       0x10 build\gcc\obj/ril/src/ril_atResponse.o
-                0x102dbeb0                Ql_RIL_AT_SetErrCode
+                0x102db490       0x10 build\gcc\obj/ril/src/ril_atResponse.o
+                0x102db490                Ql_RIL_AT_SetErrCode
 
 .text.Default_atRsp_callback
-                0x102dbec0       0xcc
+                0x102db4a0       0xcc
  .text.Default_atRsp_callback
-                0x102dbec0       0xcc build\gcc\obj/ril/src/ril_atResponse.o
-                0x102dbec0                Default_atRsp_callback
+                0x102db4a0       0xcc build\gcc\obj/ril/src/ril_atResponse.o
+                0x102db4a0                Default_atRsp_callback
 
 .text.OnURCHandler_BTGatscon
-                0x102dbf8c      0x118
+                0x102db56c      0x118
  .text.OnURCHandler_BTGatscon
-                0x102dbf8c      0x118 build\gcc\obj/ril/src/ril_ble.o
-                0x102dbf8c                OnURCHandler_BTGatscon
+                0x102db56c      0x118 build\gcc\obj/ril/src/ril_ble.o
+                0x102db56c                OnURCHandler_BTGatscon
 
 .text.OnURCHandler_BTGatwreq
-                0x102dc0a4       0xf8
+                0x102db684       0xf8
  .text.OnURCHandler_BTGatwreq
-                0x102dc0a4       0xf8 build\gcc\obj/ril/src/ril_ble.o
-                0x102dc0a4                OnURCHandler_BTGatwreq
+                0x102db684       0xf8 build\gcc\obj/ril/src/ril_ble.o
+                0x102db684                OnURCHandler_BTGatwreq
 
 .text.OnURCHandler_BTGatewreq
-                0x102dc19c       0xe0
+                0x102db77c       0xe0
  .text.OnURCHandler_BTGatewreq
-                0x102dc19c       0xe0 build\gcc\obj/ril/src/ril_ble.o
-                0x102dc19c                OnURCHandler_BTGatewreq
+                0x102db77c       0xe0 build\gcc\obj/ril/src/ril_ble.o
+                0x102db77c                OnURCHandler_BTGatewreq
 
 .text.OnURCHandler_BTGatrreq
-                0x102dc27c       0xc8
+                0x102db85c       0xc8
  .text.OnURCHandler_BTGatrreq
-                0x102dc27c       0xc8 build\gcc\obj/ril/src/ril_ble.o
-                0x102dc27c                OnURCHandler_BTGatrreq
+                0x102db85c       0xc8 build\gcc\obj/ril/src/ril_ble.o
+                0x102db85c                OnURCHandler_BTGatrreq
 
 .text.OnURCHandler_BTpxpscon
-                0x102dc344       0xa8
+                0x102db924       0xa8
  .text.OnURCHandler_BTpxpscon
-                0x102dc344       0xa8 build\gcc\obj/ril/src/ril_ble.o
-                0x102dc344                OnURCHandler_BTpxpscon
+                0x102db924       0xa8 build\gcc\obj/ril/src/ril_ble.o
+                0x102db924                OnURCHandler_BTpxpscon
 
 .text.OnURCHandler_BTfmpscon
-                0x102dc3ec       0x9c
+                0x102db9cc       0x9c
  .text.OnURCHandler_BTfmpscon
-                0x102dc3ec       0x9c build\gcc\obj/ril/src/ril_ble.o
-                0x102dc3ec                OnURCHandler_BTfmpscon
+                0x102db9cc       0x9c build\gcc\obj/ril/src/ril_ble.o
+                0x102db9cc                OnURCHandler_BTfmpscon
 
 .text.OnURCHandler_BTGatcscan
-                0x102dc488      0x194
+                0x102dba68      0x194
  .text.OnURCHandler_BTGatcscan
-                0x102dc488      0x194 build\gcc\obj/ril/src/ril_ble_clinet.o
-                0x102dc488                OnURCHandler_BTGatcscan
+                0x102dba68      0x194 build\gcc\obj/ril/src/ril_ble_clinet.o
+                0x102dba68                OnURCHandler_BTGatcscan
 
 .text.OnURCHandler_BTGatccon
-                0x102dc61c      0x178
+                0x102dbbfc      0x178
  .text.OnURCHandler_BTGatccon
-                0x102dc61c      0x178 build\gcc\obj/ril/src/ril_ble_clinet.o
-                0x102dc61c                OnURCHandler_BTGatccon
+                0x102dbbfc      0x178 build\gcc\obj/ril/src/ril_ble_clinet.o
+                0x102dbbfc                OnURCHandler_BTGatccon
 
 .text.OnURCHandler_BTGatcss
-                0x102dc794      0x150
+                0x102dbd74      0x150
  .text.OnURCHandler_BTGatcss
-                0x102dc794      0x150 build\gcc\obj/ril/src/ril_ble_clinet.o
-                0x102dc794                OnURCHandler_BTGatcss
+                0x102dbd74      0x150 build\gcc\obj/ril/src/ril_ble_clinet.o
+                0x102dbd74                OnURCHandler_BTGatcss
 
 .text.OnURCHandler_BTGatcgc
-                0x102dc8e4      0x1f0
+                0x102dbec4      0x1f0
  .text.OnURCHandler_BTGatcgc
-                0x102dc8e4      0x1f0 build\gcc\obj/ril/src/ril_ble_clinet.o
-                0x102dc8e4                OnURCHandler_BTGatcgc
+                0x102dbec4      0x1f0 build\gcc\obj/ril/src/ril_ble_clinet.o
+                0x102dbec4                OnURCHandler_BTGatcgc
 
 .text.OnURCHandler_BTGatcgd
-                0x102dcad4      0x218
+                0x102dc0b4      0x218
  .text.OnURCHandler_BTGatcgd
-                0x102dcad4      0x218 build\gcc\obj/ril/src/ril_ble_clinet.o
-                0x102dcad4                OnURCHandler_BTGatcgd
+                0x102dc0b4      0x218 build\gcc\obj/ril/src/ril_ble_clinet.o
+                0x102dc0b4                OnURCHandler_BTGatcgd
 
 .text.OnURCHandler_BTGatcrc
-                0x102dccec      0x100
+                0x102dc2cc      0x100
  .text.OnURCHandler_BTGatcrc
-                0x102dccec      0x100 build\gcc\obj/ril/src/ril_ble_clinet.o
-                0x102dccec                OnURCHandler_BTGatcrc
+                0x102dc2cc      0x100 build\gcc\obj/ril/src/ril_ble_clinet.o
+                0x102dc2cc                OnURCHandler_BTGatcrc
 
 .text.OnURCHandler_BTGatcrd
-                0x102dcdec      0x100
+                0x102dc3cc      0x100
  .text.OnURCHandler_BTGatcrd
-                0x102dcdec      0x100 build\gcc\obj/ril/src/ril_ble_clinet.o
-                0x102dcdec                OnURCHandler_BTGatcrd
+                0x102dc3cc      0x100 build\gcc\obj/ril/src/ril_ble_clinet.o
+                0x102dc3cc                OnURCHandler_BTGatcrd
 
 .text.OnURCHandler_BTGatcn
-                0x102dceec      0x1a0
+                0x102dc4cc      0x1a0
  .text.OnURCHandler_BTGatcn
-                0x102dceec      0x1a0 build\gcc\obj/ril/src/ril_ble_clinet.o
-                0x102dceec                OnURCHandler_BTGatcn
+                0x102dc4cc      0x1a0 build\gcc\obj/ril/src/ril_ble_clinet.o
+                0x102dc4cc                OnURCHandler_BTGatcn
 
 .text.BT_DevMngmt_Append
-                0x102dd08c       0x34
+                0x102dc66c       0x34
  .text.BT_DevMngmt_Append
-                0x102dd08c       0x34 build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dc66c       0x34 build\gcc\obj/ril/src/ril_bluetooth.o
 
 .text.BT_DevMngmt_isFull
-                0x102dd0c0       0x40
+                0x102dc6a0       0x40
  .text.BT_DevMngmt_isFull
-                0x102dd0c0       0x40 build\gcc\obj/ril/src/ril_bluetooth.o
-
-.text.BT_DevMngmt_Clean
-                0x102dd100       0x40
- .text.BT_DevMngmt_Clean
-                0x102dd100       0x40 build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dc6a0       0x40 build\gcc\obj/ril/src/ril_bluetooth.o
 
 .text.ATRsp_QBTSTATE_Hdlr
-                0x102dd140      0x444
+                0x102dc6e0      0x444
  .text.ATRsp_QBTSTATE_Hdlr
-                0x102dd140      0x444 build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dc6e0      0x444 build\gcc\obj/ril/src/ril_bluetooth.o
 
 .text.BT_DevMngmt_UpdateProfileId.constprop.7
-                0x102dd584       0x38
+                0x102dcb24       0x38
  .text.BT_DevMngmt_UpdateProfileId.constprop.7
-                0x102dd584       0x38 build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dcb24       0x38 build\gcc\obj/ril/src/ril_bluetooth.o
 
 .text.BT_DevMngmt_UpdateConnId.constprop.8
-                0x102dd5bc       0x38
+                0x102dcb5c       0x38
  .text.BT_DevMngmt_UpdateConnId.constprop.8
-                0x102dd5bc       0x38 build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dcb5c       0x38 build\gcc\obj/ril/src/ril_bluetooth.o
 
 .text.OnURCHandler_BTVisible
-                0x102dd5f4       0xe4
+                0x102dcb94       0xe4
  .text.OnURCHandler_BTVisible
-                0x102dd5f4       0xe4 build\gcc\obj/ril/src/ril_bluetooth.o
-                0x102dd5f4                OnURCHandler_BTVisible
+                0x102dcb94       0xe4 build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dcb94                OnURCHandler_BTVisible
 
 .text.OnURCHandler_BTScan
-                0x102dd6d8      0x26c
+                0x102dcc78      0x26c
  .text.OnURCHandler_BTScan
-                0x102dd6d8      0x26c build\gcc\obj/ril/src/ril_bluetooth.o
-                0x102dd6d8                OnURCHandler_BTScan
+                0x102dcc78      0x26c build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dcc78                OnURCHandler_BTScan
 
 .text.RIL_BT_QueryState
-                0x102dd944       0x68
+                0x102dcee4       0x68
  .text.RIL_BT_QueryState
-                0x102dd944       0x68 build\gcc\obj/ril/src/ril_bluetooth.o
-                0x102dd944                RIL_BT_QueryState
-
-.text.RIL_BT_Initialize
-                0x102dd9ac       0x44
- .text.RIL_BT_Initialize
-                0x102dd9ac       0x44 build\gcc\obj/ril/src/ril_bluetooth.o
-                0x102dd9ac                RIL_BT_Initialize
+                0x102dcee4       0x68 build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dcee4                RIL_BT_QueryState
 
 .text.OnURCHandler_BTPair
-                0x102dd9f0      0x208
+                0x102dcf4c      0x208
  .text.OnURCHandler_BTPair
-                0x102dd9f0      0x208 build\gcc\obj/ril/src/ril_bluetooth.o
-                0x102dd9f0                OnURCHandler_BTPair
+                0x102dcf4c      0x208 build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dcf4c                OnURCHandler_BTPair
 
 .text.OnURCHandler_BTPairCnf
-                0x102ddbf8      0x22c
+                0x102dd154      0x22c
  .text.OnURCHandler_BTPairCnf
-                0x102ddbf8      0x22c build\gcc\obj/ril/src/ril_bluetooth.o
-                0x102ddbf8                OnURCHandler_BTPairCnf
+                0x102dd154      0x22c build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dd154                OnURCHandler_BTPairCnf
 
 .text.OnURCHandler_BTConn
-                0x102dde24      0x234
+                0x102dd380      0x234
  .text.OnURCHandler_BTConn
-                0x102dde24      0x234 build\gcc\obj/ril/src/ril_bluetooth.o
-                0x102dde24                OnURCHandler_BTConn
+                0x102dd380      0x234 build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dd380                OnURCHandler_BTConn
 
 .text.OnURCHandler_BTConnCnf
-                0x102de058      0x2bc
+                0x102dd5b4      0x2bc
  .text.OnURCHandler_BTConnCnf
-                0x102de058      0x2bc build\gcc\obj/ril/src/ril_bluetooth.o
-                0x102de058                OnURCHandler_BTConnCnf
+                0x102dd5b4      0x2bc build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dd5b4                OnURCHandler_BTConnCnf
 
 .text.OnURCHandler_BTDisconn
-                0x102de314      0x1b8
+                0x102dd870      0x1b8
  .text.OnURCHandler_BTDisconn
-                0x102de314      0x1b8 build\gcc\obj/ril/src/ril_bluetooth.o
-                0x102de314                OnURCHandler_BTDisconn
+                0x102dd870      0x1b8 build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dd870                OnURCHandler_BTDisconn
 
 .text.OnURCHandler_BTIndication
-                0x102de4cc      0x35c
+                0x102dda28      0x35c
  .text.OnURCHandler_BTIndication
-                0x102de4cc      0x35c build\gcc\obj/ril/src/ril_bluetooth.o
-                0x102de4cc                OnURCHandler_BTIndication
+                0x102dda28      0x35c build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102dda28                OnURCHandler_BTIndication
 
 .text.Ql_RIL_RcvDataFrmCore
-                0x102de828       0x20
+                0x102ddd84       0x20
  .text.Ql_RIL_RcvDataFrmCore
-                0x102de828       0x20 build\gcc\obj/ril/src/ril_custom.o
-                0x102de828                Ql_RIL_RcvDataFrmCore
+                0x102ddd84       0x20 build\gcc\obj/ril/src/ril_custom.o
+                0x102ddd84                Ql_RIL_RcvDataFrmCore
 
 .text.OnURCHandler_QToneDet
-                0x102de848       0xf4
+                0x102ddda4       0xf4
  .text.OnURCHandler_QToneDet
-                0x102de848       0xf4 build\gcc\obj/ril/src/Ril_dtmf.o
-                0x102de848                OnURCHandler_QToneDet
+                0x102ddda4       0xf4 build\gcc\obj/ril/src/Ril_dtmf.o
+                0x102ddda4                OnURCHandler_QToneDet
 
 .text.OnURCHandler_QWDTMF
-                0x102de93c       0xa0
+                0x102dde98       0xa0
  .text.OnURCHandler_QWDTMF
-                0x102de93c       0xa0 build\gcc\obj/ril/src/Ril_dtmf.o
-                0x102de93c                OnURCHandler_QWDTMF
-
-.text.ATResponse_GPSRead_Hdlr
-                0x102de9dc      0x3c8
- .text.ATResponse_GPSRead_Hdlr
-                0x102de9dc      0x3c8 build\gcc\obj/ril/src/ril_gps.o
-
-.text.RIL_GPS_Open
-                0x102deda4       0xb4
- .text.RIL_GPS_Open
-                0x102deda4       0xb4 build\gcc\obj/ril/src/ril_gps.o
-                0x102deda4                RIL_GPS_Open
-
-.text.RIL_GPS_Read
-                0x102dee58      0x12c
- .text.RIL_GPS_Read
-                0x102dee58      0x12c build\gcc\obj/ril/src/ril_gps.o
-                0x102dee58                RIL_GPS_Read
+                0x102dde98       0xa0 build\gcc\obj/ril/src/Ril_dtmf.o
+                0x102dde98                OnURCHandler_QWDTMF
 
 .text.OnURCHandler_GPSCMD
-                0x102def84       0x6c
+                0x102ddf38       0x6c
  .text.OnURCHandler_GPSCMD
-                0x102def84       0x6c build\gcc\obj/ril/src/ril_gps.o
-                0x102def84                OnURCHandler_GPSCMD
+                0x102ddf38       0x6c build\gcc\obj/ril/src/ril_gps.o
+                0x102ddf38                OnURCHandler_GPSCMD
 
 .text.RIL_GetInitCmdCnt
-                0x102deff0        0x8
+                0x102ddfa4        0x8
  .text.RIL_GetInitCmdCnt
-                0x102deff0        0x8 build\gcc\obj/ril/src/ril_init.o
-                0x102deff0                RIL_GetInitCmdCnt
+                0x102ddfa4        0x8 build\gcc\obj/ril/src/ril_init.o
+                0x102ddfa4                RIL_GetInitCmdCnt
 
 .text.RIL_GetLimitedCmdCnt
-                0x102deff8        0x8
+                0x102ddfac        0x8
  .text.RIL_GetLimitedCmdCnt
-                0x102deff8        0x8 build\gcc\obj/ril/src/ril_init.o
-                0x102deff8                RIL_GetLimitedCmdCnt
+                0x102ddfac        0x8 build\gcc\obj/ril/src/ril_init.o
+                0x102ddfac                RIL_GetLimitedCmdCnt
 
 .text.OnURCHandler_QCELLLocation
-                0x102df000      0x148
+                0x102ddfb4      0x148
  .text.OnURCHandler_QCELLLocation
-                0x102df000      0x148 build\gcc\obj/ril/src/ril_location.o
-                0x102df000                OnURCHandler_QCELLLocation
+                0x102ddfb4      0x148 build\gcc\obj/ril/src/ril_location.o
+                0x102ddfb4                OnURCHandler_QCELLLocation
 
 .text.ATResponse_QMTPUB_handler
-                0x102df148       0xb4
+                0x102de0fc       0xb4
  .text.ATResponse_QMTPUB_handler
-                0x102df148       0xb4 build\gcc\obj/ril/src/ril_mqtt.o
+                0x102de0fc       0xb4 build\gcc\obj/ril/src/ril_mqtt.o
 
 .text.ATResponse_Handler
-                0x102df1fc       0x9c
+                0x102de1b0       0x9c
  .text.ATResponse_Handler
-                0x102df1fc       0x9c build\gcc\obj/ril/src/ril_mqtt.o
+                0x102de1b0       0x9c build\gcc\obj/ril/src/ril_mqtt.o
 
 .text.RIL_MQTT_QMTCFG_Showrecvlen
-                0x102df298       0x88
+                0x102de24c       0x88
  .text.RIL_MQTT_QMTCFG_Showrecvlen
-                0x102df298       0x88 build\gcc\obj/ril/src/ril_mqtt.o
-                0x102df298                RIL_MQTT_QMTCFG_Showrecvlen
+                0x102de24c       0x88 build\gcc\obj/ril/src/ril_mqtt.o
+                0x102de24c                RIL_MQTT_QMTCFG_Showrecvlen
 
 .text.RIL_MQTT_QMTCFG_Version_Select
-                0x102df320       0x88
+                0x102de2d4       0x88
  .text.RIL_MQTT_QMTCFG_Version_Select
-                0x102df320       0x88 build\gcc\obj/ril/src/ril_mqtt.o
-                0x102df320                RIL_MQTT_QMTCFG_Version_Select
+                0x102de2d4       0x88 build\gcc\obj/ril/src/ril_mqtt.o
+                0x102de2d4                RIL_MQTT_QMTCFG_Version_Select
 
 .text.RIL_MQTT_QMTOPEN
-                0x102df3a8       0x90
+                0x102de35c       0x90
  .text.RIL_MQTT_QMTOPEN
-                0x102df3a8       0x90 build\gcc\obj/ril/src/ril_mqtt.o
-                0x102df3a8                RIL_MQTT_QMTOPEN
+                0x102de35c       0x90 build\gcc\obj/ril/src/ril_mqtt.o
+                0x102de35c                RIL_MQTT_QMTOPEN
 
 .text.RIL_MQTT_QMTCONN
-                0x102df438       0xc0
+                0x102de3ec       0xc0
  .text.RIL_MQTT_QMTCONN
-                0x102df438       0xc0 build\gcc\obj/ril/src/ril_mqtt.o
-                0x102df438                RIL_MQTT_QMTCONN
+                0x102de3ec       0xc0 build\gcc\obj/ril/src/ril_mqtt.o
+                0x102de3ec                RIL_MQTT_QMTCONN
 
 .text.RIL_MQTT_QMTPUB
-                0x102df4f8      0x108
+                0x102de4ac      0x108
  .text.RIL_MQTT_QMTPUB
-                0x102df4f8      0x108 build\gcc\obj/ril/src/ril_mqtt.o
-                0x102df4f8                RIL_MQTT_QMTPUB
+                0x102de4ac      0x108 build\gcc\obj/ril/src/ril_mqtt.o
+                0x102de4ac                RIL_MQTT_QMTPUB
 
 .text.ATResponse_CGREG_Handler
-                0x102df600       0xcc
+                0x102de5b4       0xcc
  .text.ATResponse_CGREG_Handler
-                0x102df600       0xcc build\gcc\obj/ril/src/ril_network.o
+                0x102de5b4       0xcc build\gcc\obj/ril/src/ril_network.o
 
 .text.RIL_NW_GetGPRSState
-                0x102df6cc       0x78
+                0x102de680       0x78
  .text.RIL_NW_GetGPRSState
-                0x102df6cc       0x78 build\gcc\obj/ril/src/ril_network.o
-                0x102df6cc                RIL_NW_GetGPRSState
+                0x102de680       0x78 build\gcc\obj/ril/src/ril_network.o
+                0x102de680                RIL_NW_GetGPRSState
 
 .text.RIL_NW_SetGPRSContext
-                0x102df744       0x7c
+                0x102de6f8       0x7c
  .text.RIL_NW_SetGPRSContext
-                0x102df744       0x7c build\gcc\obj/ril/src/ril_network.o
-                0x102df744                RIL_NW_SetGPRSContext
+                0x102de6f8       0x7c build\gcc\obj/ril/src/ril_network.o
+                0x102de6f8                RIL_NW_SetGPRSContext
 
 .text.RIL_NW_SetAPN
-                0x102df7c0      0x10c
+                0x102de774      0x10c
  .text.RIL_NW_SetAPN
-                0x102df7c0      0x10c build\gcc\obj/ril/src/ril_network.o
-                0x102df7c0                RIL_NW_SetAPN
+                0x102de774      0x10c build\gcc\obj/ril/src/ril_network.o
+                0x102de774                RIL_NW_SetAPN
 
 .text.RIL_NW_OpenPDPContext
-                0x102df8cc       0xb0
+                0x102de880       0xb0
  .text.RIL_NW_OpenPDPContext
-                0x102df8cc       0xb0 build\gcc\obj/ril/src/ril_network.o
-                0x102df8cc                RIL_NW_OpenPDPContext
+                0x102de880       0xb0 build\gcc\obj/ril/src/ril_network.o
+                0x102de880                RIL_NW_OpenPDPContext
 
 .text.OnURCHandler_NTPCMD
-                0x102df97c       0x6c
+                0x102de930       0x6c
  .text.OnURCHandler_NTPCMD
-                0x102df97c       0x6c build\gcc\obj/ril/src/ril_ntp.o
-                0x102df97c                OnURCHandler_NTPCMD
+                0x102de930       0x6c build\gcc\obj/ril/src/ril_ntp.o
+                0x102de930                OnURCHandler_NTPCMD
 
 .text.RIL_SIM_GetSimStateByName
-                0x102df9e8      0x170
+                0x102de99c      0x170
  .text.RIL_SIM_GetSimStateByName
-                0x102df9e8      0x170 build\gcc\obj/ril/src/ril_sim.o
-                0x102df9e8                RIL_SIM_GetSimStateByName
+                0x102de99c      0x170 build\gcc\obj/ril/src/ril_sim.o
+                0x102de99c                RIL_SIM_GetSimStateByName
 
 .text.QSDK_Get_Str
-                0x102dfb58       0xd0
+                0x102deb0c       0xd0
  .text.QSDK_Get_Str
-                0x102dfb58       0xd0 build\gcc\obj/ril/src/ril_system.o
-                0x102dfb58                QSDK_Get_Str
+                0x102deb0c       0xd0 build\gcc\obj/ril/src/ril_system.o
+                0x102deb0c                QSDK_Get_Str
 
 .text.QSDK_Get_Strlen
-                0x102dfc28       0x68
+                0x102debdc       0x68
  .text.QSDK_Get_Strlen
-                0x102dfc28       0x68 build\gcc\obj/ril/src/ril_system.o
-                0x102dfc28                QSDK_Get_Strlen
+                0x102debdc       0x68 build\gcc\obj/ril/src/ril_system.o
+                0x102debdc                QSDK_Get_Strlen
 
 .text.OnURCHandler_HTTP
-                0x102dfc90       0x6c
+                0x102dec44       0x6c
  .text.OnURCHandler_HTTP
-                0x102dfc90       0x6c build\gcc\obj/ril/src/ril_urc.o
+                0x102dec44       0x6c build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_AudPlayInd
-                0x102dfcfc       0x50
+                0x102decb0       0x50
  .text.OnURCHandler_AudPlayInd
-                0x102dfcfc       0x50 build\gcc\obj/ril/src/ril_urc.o
+                0x102decb0       0x50 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_MQTT_DISC
-                0x102dfd4c      0x124
+                0x102ded00      0x124
  .text.OnURCHandler_MQTT_DISC
-                0x102dfd4c      0x124 build\gcc\obj/ril/src/ril_urc.o
+                0x102ded00      0x124 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_MQTT_CLOSE
-                0x102dfe70      0x124
+                0x102dee24      0x124
  .text.OnURCHandler_MQTT_CLOSE
-                0x102dfe70      0x124 build\gcc\obj/ril/src/ril_urc.o
+                0x102dee24      0x124 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_MQTT_STATE
-                0x102dff94       0xf8
+                0x102def48       0xf8
  .text.OnURCHandler_MQTT_STATE
-                0x102dff94       0xf8 build\gcc\obj/ril/src/ril_urc.o
+                0x102def48       0xf8 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_MQTT_TUNS
-                0x102e008c      0x124
+                0x102df040      0x124
  .text.OnURCHandler_MQTT_TUNS
-                0x102e008c      0x124 build\gcc\obj/ril/src/ril_urc.o
+                0x102df040      0x124 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_MQTT_PUB
-                0x102e01b0      0x164
+                0x102df164      0x164
  .text.OnURCHandler_MQTT_PUB
-                0x102e01b0      0x164 build\gcc\obj/ril/src/ril_urc.o
+                0x102df164      0x164 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_MQTT_SUB
-                0x102e0314      0x184
+                0x102df2c8      0x184
  .text.OnURCHandler_MQTT_SUB
-                0x102e0314      0x184 build\gcc\obj/ril/src/ril_urc.o
+                0x102df2c8      0x184 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_MQTT_CONN
-                0x102e0498      0x138
+                0x102df44c      0x138
  .text.OnURCHandler_MQTT_CONN
-                0x102e0498      0x138 build\gcc\obj/ril/src/ril_urc.o
+                0x102df44c      0x138 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_MQTT_OPEN
-                0x102e05d0       0xf8
+                0x102df584       0xf8
  .text.OnURCHandler_MQTT_OPEN
-                0x102e05d0       0xf8 build\gcc\obj/ril/src/ril_urc.o
+                0x102df584       0xf8 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_AlarmRing
-                0x102e06c8       0x28
+                0x102df67c       0x28
  .text.OnURCHandler_AlarmRing
-                0x102e06c8       0x28 build\gcc\obj/ril/src/ril_urc.o
+                0x102df67c       0x28 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_InitStat
-                0x102e06f0       0x68
+                0x102df6a4       0x68
  .text.OnURCHandler_InitStat
-                0x102e06f0       0x68 build\gcc\obj/ril/src/ril_urc.o
+                0x102df6a4       0x68 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_FTP
-                0x102e0758      0x178
+                0x102df70c      0x178
  .text.OnURCHandler_FTP
-                0x102e0758      0x178 build\gcc\obj/ril/src/ril_urc.o
+                0x102df70c      0x178 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_CFUN
-                0x102e08d0       0xc0
+                0x102df884       0xc0
  .text.OnURCHandler_CFUN
-                0x102e08d0       0xc0 build\gcc\obj/ril/src/ril_urc.o
+                0x102df884       0xc0 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_Voltage
-                0x102e0990       0xa4
+                0x102df944       0xa4
  .text.OnURCHandler_Voltage
-                0x102e0990       0xa4 build\gcc\obj/ril/src/ril_urc.o
+                0x102df944       0xa4 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_Network
-                0x102e0a34      0x178
+                0x102df9e8      0x178
  .text.OnURCHandler_Network
-                0x102e0a34      0x178 build\gcc\obj/ril/src/ril_urc.o
+                0x102df9e8      0x178 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_Call
-                0x102e0bac      0x28c
+                0x102dfb60      0x28c
  .text.OnURCHandler_Call
-                0x102e0bac      0x28c build\gcc\obj/ril/src/ril_urc.o
+                0x102dfb60      0x28c build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_SIM
-                0x102e0e38      0x100
+                0x102dfdec      0x100
  .text.OnURCHandler_SIM
-                0x102e0e38      0x100 build\gcc\obj/ril/src/ril_urc.o
+                0x102dfdec      0x100 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler_SMS
-                0x102e0f38      0x138
+                0x102dfeec      0x138
  .text.OnURCHandler_SMS
-                0x102e0f38      0x138 build\gcc\obj/ril/src/ril_urc.o
+                0x102dfeec      0x138 build\gcc\obj/ril/src/ril_urc.o
 
 .text.OnURCHandler
-                0x102e1070       0xc0
+                0x102e0024       0xc0
  .text.OnURCHandler
-                0x102e1070       0xc0 build\gcc\obj/ril/src/ril_urc.o
-                0x102e1070                OnURCHandler
+                0x102e0024       0xc0 build\gcc\obj/ril/src/ril_urc.o
+                0x102e0024                OnURCHandler
 
 .text.Ql_RIL_IsURCStr
-                0x102e1130       0x80
+                0x102e00e4       0x80
  .text.Ql_RIL_IsURCStr
-                0x102e1130       0x80 build\gcc\obj/ril/src/ril_urc.o
-                0x102e1130                Ql_RIL_IsURCStr
+                0x102e00e4       0x80 build\gcc\obj/ril/src/ril_urc.o
+                0x102e00e4                Ql_RIL_IsURCStr
 
 .text.Ql_StrPrefixMatch
-                0x102e11b0       0x48
+                0x102e0164       0x48
  .text.Ql_StrPrefixMatch
-                0x102e11b0       0x48 build\gcc\obj/ril/src/ril_util.o
-                0x102e11b0                Ql_StrPrefixMatch
+                0x102e0164       0x48 build\gcc\obj/ril/src/ril_util.o
+                0x102e0164                Ql_StrPrefixMatch
 
 .text.Ql_StrToUpper
-                0x102e11f8       0x44
+                0x102e01ac       0x44
  .text.Ql_StrToUpper
-                0x102e11f8       0x44 build\gcc\obj/ril/src/ril_util.o
-                0x102e11f8                Ql_StrToUpper
+                0x102e01ac       0x44 build\gcc\obj/ril/src/ril_util.o
+                0x102e01ac                Ql_StrToUpper
 
 .text.Ql_RIL_FindString
-                0x102e123c       0x90
+                0x102e01f0       0x90
  .text.Ql_RIL_FindString
-                0x102e123c       0x90 build\gcc\obj/ril/src/ril_util.o
-                0x102e123c                Ql_RIL_FindString
+                0x102e01f0       0x90 build\gcc\obj/ril/src/ril_util.o
+                0x102e01f0                Ql_RIL_FindString
 
 .text.Ql_RIL_FindLine
-                0x102e12cc      0x278
+                0x102e0280      0x278
  .text.Ql_RIL_FindLine
-                0x102e12cc      0x278 build\gcc\obj/ril/src/ril_util.o
-                0x102e12cc                Ql_RIL_FindLine
+                0x102e0280      0x278 build\gcc\obj/ril/src/ril_util.o
+                0x102e0280                Ql_RIL_FindLine
 
 .text.Ql_GenHash
-                0x102e1544       0x4c
+                0x102e04f8       0x4c
  .text.Ql_GenHash
-                0x102e1544       0x4c build\gcc\obj/ril/src/ril_util.o
-                0x102e1544                Ql_GenHash
+                0x102e04f8       0x4c build\gcc\obj/ril/src/ril_util.o
+                0x102e04f8                Ql_GenHash
 
 .text.CallBack_UART_Hdlr
-                0x102e1590        0x4
+                0x102e0544        0x4
  .text.CallBack_UART_Hdlr
-                0x102e1590        0x4 build\gcc\obj/custom/main.o
+                0x102e0544        0x4 build\gcc\obj/custom/main.o
 
-.text.mqtt_recv_cb
-                0x102e1594       0x74
- .text.mqtt_recv_cb
-                0x102e1594       0x74 build\gcc\obj/custom/main.o
+.text.mqtt_recv
+                0x102e0548       0x74
+ .text.mqtt_recv
+                0x102e0548       0x74 build\gcc\obj/custom/main.o
 
 .text.Callback_Timer
-                0x102e1608      0x594
+                0x102e05bc      0x56c
  .text.Callback_Timer
-                0x102e1608      0x594 build\gcc\obj/custom/main.o
+                0x102e05bc      0x56c build\gcc\obj/custom/main.o
 
 .text.proc_main_task
-                0x102e1b9c      0x418
+                0x102e0b28      0x444
  .text.proc_main_task
-                0x102e1b9c      0x418 build\gcc\obj/custom/main.o
-                0x102e1b9c                proc_main_task
+                0x102e0b28      0x444 build\gcc\obj/custom/main.o
+                0x102e0b28                proc_main_task
 
 .text.Ql_MEM_Alloc
-                0x102e1fb4       0x78
+                0x102e0f6c       0x78
  .text.Ql_MEM_Alloc
-                0x102e1fb4       0x78 libs/gcc/app_start.lib(memory.o)
-                0x102e1fb4                Ql_MEM_Alloc
+                0x102e0f6c       0x78 libs/gcc/app_start.lib(memory.o)
+                0x102e0f6c                Ql_MEM_Alloc
 
 .text.Ql_MEM_Free
-                0x102e202c       0x74
+                0x102e0fe4       0x74
  .text.Ql_MEM_Free
-                0x102e202c       0x74 libs/gcc/app_start.lib(memory.o)
-                0x102e202c                Ql_MEM_Free
+                0x102e0fe4       0x74 libs/gcc/app_start.lib(memory.o)
+                0x102e0fe4                Ql_MEM_Free
 
 .text.ql_InitVFunc
-                0x102e20a0      0x104
+                0x102e1058      0x104
  .text.ql_InitVFunc
-                0x102e20a0      0x104 libs/gcc/app_start.lib(ql_main.o)
-                0x102e20a0                ql_InitVFunc
+                0x102e1058      0x104 libs/gcc/app_start.lib(ql_main.o)
+                0x102e1058                ql_InitVFunc
 
 .text.ocpu_main
-                0x102e21a4       0xf0
+                0x102e115c       0xf0
  .text.ocpu_main
-                0x102e21a4       0xf0 libs/gcc/app_start.lib(ql_main.o)
-                0x102e21a4                ocpu_main
+                0x102e115c       0xf0 libs/gcc/app_start.lib(ql_main.o)
+                0x102e115c                ocpu_main
 
 .text.proc_reserved2
-                0x102e2294       0x70
+                0x102e124c       0x70
  .text.proc_reserved2
-                0x102e2294       0x70 libs/gcc/app_start.lib(ril_aux.o)
-                0x102e2294                proc_reserved2
+                0x102e124c       0x70 libs/gcc/app_start.lib(ril_aux.o)
+                0x102e124c                proc_reserved2
 
 .text.ril_StopATTimer
-                0x102e2304       0x34
+                0x102e12bc       0x34
  .text.ril_StopATTimer
-                0x102e2304       0x34 libs/gcc/app_start.lib(ril_main.o)
+                0x102e12bc       0x34 libs/gcc/app_start.lib(ril_main.o)
 
 .text.Callback_OnATTimer
-                0x102e2338       0x4c
+                0x102e12f0       0x4c
  .text.Callback_OnATTimer
-                0x102e2338       0x4c libs/gcc/app_start.lib(ril_main.o)
+                0x102e12f0       0x4c libs/gcc/app_start.lib(ril_main.o)
 
 .text.CallBack_SerialPort_Hdlr
-                0x102e2384      0x438
+                0x102e133c      0x438
  .text.CallBack_SerialPort_Hdlr
-                0x102e2384      0x438 libs/gcc/app_start.lib(ril_main.o)
+                0x102e133c      0x438 libs/gcc/app_start.lib(ril_main.o)
 
 .text.proc_reserved1
-                0x102e27bc      0x200
+                0x102e1774      0x200
  .text.proc_reserved1
-                0x102e27bc      0x200 libs/gcc/app_start.lib(ril_main.o)
-                0x102e27bc                proc_reserved1
+                0x102e1774      0x200 libs/gcc/app_start.lib(ril_main.o)
+                0x102e1774                proc_reserved1
 
 .text.Ql_RIL_Initialize
-                0x102e29bc       0xd4
+                0x102e1974       0xd4
  .text.Ql_RIL_Initialize
-                0x102e29bc       0xd4 libs/gcc/app_start.lib(ril_main.o)
-                0x102e29bc                Ql_RIL_Initialize
+                0x102e1974       0xd4 libs/gcc/app_start.lib(ril_main.o)
+                0x102e1974                Ql_RIL_Initialize
 
 .text.Ql_RIL_SendATCmd
-                0x102e2a90      0x260
+                0x102e1a48      0x260
  .text.Ql_RIL_SendATCmd
-                0x102e2a90      0x260 libs/gcc/app_start.lib(ril_main.o)
-                0x102e2a90                Ql_RIL_SendATCmd
+                0x102e1a48      0x260 libs/gcc/app_start.lib(ril_main.o)
+                0x102e1a48                Ql_RIL_SendATCmd
 
 .text.Ql_RIL_WriteDataToCore
-                0x102e2cf0       0x24
+                0x102e1ca8       0x24
  .text.Ql_RIL_WriteDataToCore
-                0x102e2cf0       0x24 libs/gcc/app_start.lib(ril_main.o)
-                0x102e2cf0                Ql_RIL_WriteDataToCore
+                0x102e1ca8       0x24 libs/gcc/app_start.lib(ril_main.o)
+                0x102e1ca8                Ql_RIL_WriteDataToCore
 
 .text.Ql_Mqtt_Recv_Register
-                0x102e2d14       0x1c
+                0x102e1ccc       0x1c
  .text.Ql_Mqtt_Recv_Register
-                0x102e2d14       0x1c libs/gcc/app_start.lib(ril_main.o)
-                0x102e2d14                Ql_Mqtt_Recv_Register
+                0x102e1ccc       0x1c libs/gcc/app_start.lib(ril_main.o)
+                0x102e1ccc                Ql_Mqtt_Recv_Register
 
-.text.Ql_atof   0x102e2d30       0x98
- .text.Ql_atof  0x102e2d30       0x98 libs/gcc/app_start.lib(stdlib_func.o)
-                0x102e2d30                Ql_atof
+.text.Ql_atof   0x102e1ce8       0x98
+ .text.Ql_atof  0x102e1ce8       0x98 libs/gcc/app_start.lib(stdlib_func.o)
+                0x102e1ce8                Ql_atof
 
 .text.Ql_strcpy
-                0x102e2dc8       0xa0
+                0x102e1d80       0xa0
  .text.Ql_strcpy
-                0x102e2dc8       0xa0 libs/gcc/app_start.lib(stdlib_func.o)
-                0x102e2dc8                Ql_strcpy
+                0x102e1d80       0xa0 libs/gcc/app_start.lib(stdlib_func.o)
+                0x102e1d80                Ql_strcpy
 
 .text.Ql_strncpy
-                0x102e2e68       0x88
+                0x102e1e20       0x88
  .text.Ql_strncpy
-                0x102e2e68       0x88 libs/gcc/app_start.lib(stdlib_func.o)
-                0x102e2e68                Ql_strncpy
-
-.text.Ql_strncat
-                0x102e2ef0       0x88
- .text.Ql_strncat
-                0x102e2ef0       0x88 libs/gcc/app_start.lib(stdlib_func.o)
-                0x102e2ef0                Ql_strncat
+                0x102e1e20       0x88 libs/gcc/app_start.lib(stdlib_func.o)
+                0x102e1e20                Ql_strncpy
 
 .text.Ql_strlen
-                0x102e2f78       0x78
+                0x102e1ea8       0x78
  .text.Ql_strlen
-                0x102e2f78       0x78 libs/gcc/app_start.lib(stdlib_func.o)
-                0x102e2f78                Ql_strlen
+                0x102e1ea8       0x78 libs/gcc/app_start.lib(stdlib_func.o)
+                0x102e1ea8                Ql_strlen
 
 .text.Ql_strcmp
-                0x102e2ff0       0x68
+                0x102e1f20       0x68
  .text.Ql_strcmp
-                0x102e2ff0       0x68 libs/gcc/app_start.lib(stdlib_func.o)
-                0x102e2ff0                Ql_strcmp
+                0x102e1f20       0x68 libs/gcc/app_start.lib(stdlib_func.o)
+                0x102e1f20                Ql_strcmp
 
 .text.Ql_strncmp
-                0x102e3058       0x70
+                0x102e1f88       0x70
  .text.Ql_strncmp
-                0x102e3058       0x70 libs/gcc/app_start.lib(stdlib_func.o)
-                0x102e3058                Ql_strncmp
+                0x102e1f88       0x70 libs/gcc/app_start.lib(stdlib_func.o)
+                0x102e1f88                Ql_strncmp
 
 .text.Ql_memset
-                0x102e30c8       0x88
+                0x102e1ff8       0x88
  .text.Ql_memset
-                0x102e30c8       0x88 libs/gcc/app_start.lib(stdlib_func.o)
-                0x102e30c8                Ql_memset
+                0x102e1ff8       0x88 libs/gcc/app_start.lib(stdlib_func.o)
+                0x102e1ff8                Ql_memset
 
 .text.Ql_memcpy
-                0x102e3150       0x88
+                0x102e2080       0x88
  .text.Ql_memcpy
-                0x102e3150       0x88 libs/gcc/app_start.lib(stdlib_func.o)
-                0x102e3150                Ql_memcpy
+                0x102e2080       0x88 libs/gcc/app_start.lib(stdlib_func.o)
+                0x102e2080                Ql_memcpy
 
 .text.Ql_strstr
-                0x102e31d8       0x80
+                0x102e2108       0x80
  .text.Ql_strstr
-                0x102e31d8       0x80 libs/gcc/app_start.lib(stdlib_func.o)
-                0x102e31d8                Ql_strstr
+                0x102e2108       0x80 libs/gcc/app_start.lib(stdlib_func.o)
+                0x102e2108                Ql_strstr
 
 .text.Ql_toupper
-                0x102e3258        0x8
+                0x102e2188        0x8
  .text.Ql_toupper
-                0x102e3258        0x8 libs/gcc/app_start.lib(stdlib_func.o)
-                0x102e3258                Ql_toupper
+                0x102e2188        0x8 libs/gcc/app_start.lib(stdlib_func.o)
+                0x102e2188                Ql_toupper
 
-.text.Ql_atoi   0x102e3260       0x84
- .text.Ql_atoi  0x102e3260       0x84 libs/gcc/app_start.lib(stdlib_func.o)
-                0x102e3260                Ql_atoi
+.text.Ql_atoi   0x102e2190       0x84
+ .text.Ql_atoi  0x102e2190       0x84 libs/gcc/app_start.lib(stdlib_func.o)
+                0x102e2190                Ql_atoi
 
-.text.Ql_Sleep  0x102e32e4       0x74
+.text.Ql_Sleep  0x102e2214       0x74
  .text.Ql_Sleep
-                0x102e32e4       0x74 libs/gcc/app_start.lib(system.o)
-                0x102e32e4                Ql_Sleep
+                0x102e2214       0x74 libs/gcc/app_start.lib(system.o)
+                0x102e2214                Ql_Sleep
 
 .text.Ql_GetSDKVer
-                0x102e3358       0x64
+                0x102e2288       0x64
  .text.Ql_GetSDKVer
-                0x102e3358       0x64 libs/gcc/app_start.lib(system.o)
-                0x102e3358                Ql_GetSDKVer
+                0x102e2288       0x64 libs/gcc/app_start.lib(system.o)
+                0x102e2288                Ql_GetSDKVer
 
 .text.Ql_OS_GetMessage
-                0x102e33bc       0x60
+                0x102e22ec       0x60
  .text.Ql_OS_GetMessage
-                0x102e33bc       0x60 libs/gcc/app_start.lib(taskMngt.o)
-                0x102e33bc                Ql_OS_GetMessage
+                0x102e22ec       0x60 libs/gcc/app_start.lib(taskMngt.o)
+                0x102e22ec                Ql_OS_GetMessage
 
 .text.Ql_OS_SendMessage
-                0x102e341c       0x78
+                0x102e234c       0x78
  .text.Ql_OS_SendMessage
-                0x102e341c       0x78 libs/gcc/app_start.lib(taskMngt.o)
-                0x102e341c                Ql_OS_SendMessage
+                0x102e234c       0x78 libs/gcc/app_start.lib(taskMngt.o)
+                0x102e234c                Ql_OS_SendMessage
 
 .text.Ql_OS_CreateMutex
-                0x102e3494       0x54
+                0x102e23c4       0x54
  .text.Ql_OS_CreateMutex
-                0x102e3494       0x54 libs/gcc/app_start.lib(taskMngt.o)
-                0x102e3494                Ql_OS_CreateMutex
+                0x102e23c4       0x54 libs/gcc/app_start.lib(taskMngt.o)
+                0x102e23c4                Ql_OS_CreateMutex
 
 .text.Ql_OS_TakeMutex
-                0x102e34e8       0x54
+                0x102e2418       0x54
  .text.Ql_OS_TakeMutex
-                0x102e34e8       0x54 libs/gcc/app_start.lib(taskMngt.o)
-                0x102e34e8                Ql_OS_TakeMutex
+                0x102e2418       0x54 libs/gcc/app_start.lib(taskMngt.o)
+                0x102e2418                Ql_OS_TakeMutex
 
 .text.Ql_OS_GiveMutex
-                0x102e353c       0x54
+                0x102e246c       0x54
  .text.Ql_OS_GiveMutex
-                0x102e353c       0x54 libs/gcc/app_start.lib(taskMngt.o)
-                0x102e353c                Ql_OS_GiveMutex
+                0x102e246c       0x54 libs/gcc/app_start.lib(taskMngt.o)
+                0x102e246c                Ql_OS_GiveMutex
 
 .text.Ql_OS_CreateEvent
-                0x102e3590       0x54
+                0x102e24c0       0x54
  .text.Ql_OS_CreateEvent
-                0x102e3590       0x54 libs/gcc/app_start.lib(taskMngt.o)
-                0x102e3590                Ql_OS_CreateEvent
+                0x102e24c0       0x54 libs/gcc/app_start.lib(taskMngt.o)
+                0x102e24c0                Ql_OS_CreateEvent
 
 .text.Ql_OS_WaitEvent
-                0x102e35e4       0x68
+                0x102e2514       0x68
  .text.Ql_OS_WaitEvent
-                0x102e35e4       0x68 libs/gcc/app_start.lib(taskMngt.o)
-                0x102e35e4                Ql_OS_WaitEvent
+                0x102e2514       0x68 libs/gcc/app_start.lib(taskMngt.o)
+                0x102e2514                Ql_OS_WaitEvent
 
 .text.Ql_OS_SetEvent
-                0x102e364c       0x68
+                0x102e257c       0x68
  .text.Ql_OS_SetEvent
-                0x102e364c       0x68 libs/gcc/app_start.lib(taskMngt.o)
-                0x102e364c                Ql_OS_SetEvent
+                0x102e257c       0x68 libs/gcc/app_start.lib(taskMngt.o)
+                0x102e257c                Ql_OS_SetEvent
 
 .text.Ql_Timer_Register
-                0x102e36b4       0x70
+                0x102e25e4       0x70
  .text.Ql_Timer_Register
-                0x102e36b4       0x70 libs/gcc/app_start.lib(timer.o)
-                0x102e36b4                Ql_Timer_Register
+                0x102e25e4       0x70 libs/gcc/app_start.lib(timer.o)
+                0x102e25e4                Ql_Timer_Register
 
 .text.Ql_Timer_Start
-                0x102e3724       0x70
+                0x102e2654       0x70
  .text.Ql_Timer_Start
-                0x102e3724       0x70 libs/gcc/app_start.lib(timer.o)
-                0x102e3724                Ql_Timer_Start
+                0x102e2654       0x70 libs/gcc/app_start.lib(timer.o)
+                0x102e2654                Ql_Timer_Start
 
 .text.Ql_Timer_Stop
-                0x102e3794       0x60
+                0x102e26c4       0x60
  .text.Ql_Timer_Stop
-                0x102e3794       0x60 libs/gcc/app_start.lib(timer.o)
-                0x102e3794                Ql_Timer_Stop
+                0x102e26c4       0x60 libs/gcc/app_start.lib(timer.o)
+                0x102e26c4                Ql_Timer_Stop
 
 .text.Ql_UART_Register
-                0x102e37f4       0x70
+                0x102e2724       0x70
  .text.Ql_UART_Register
-                0x102e37f4       0x70 libs/gcc/app_start.lib(uart.o)
-                0x102e37f4                Ql_UART_Register
+                0x102e2724       0x70 libs/gcc/app_start.lib(uart.o)
+                0x102e2724                Ql_UART_Register
 
 .text.Ql_UART_Open
-                0x102e3864       0x70
+                0x102e2794       0x70
  .text.Ql_UART_Open
-                0x102e3864       0x70 libs/gcc/app_start.lib(uart.o)
-                0x102e3864                Ql_UART_Open
+                0x102e2794       0x70 libs/gcc/app_start.lib(uart.o)
+                0x102e2794                Ql_UART_Open
 
 .text.Ql_UART_Write
-                0x102e38d4       0x70
+                0x102e2804       0x70
  .text.Ql_UART_Write
-                0x102e38d4       0x70 libs/gcc/app_start.lib(uart.o)
-                0x102e38d4                Ql_UART_Write
+                0x102e2804       0x70 libs/gcc/app_start.lib(uart.o)
+                0x102e2804                Ql_UART_Write
 
 .text.Ql_UART_Read
-                0x102e3944       0x70
+                0x102e2874       0x70
  .text.Ql_UART_Read
-                0x102e3944       0x70 libs/gcc/app_start.lib(uart.o)
-                0x102e3944                Ql_UART_Read
+                0x102e2874       0x70 libs/gcc/app_start.lib(uart.o)
+                0x102e2874                Ql_UART_Read
 
 .text.Ql_UART_GetPinStatus
-                0x102e39b4       0x68
+                0x102e28e4       0x68
  .text.Ql_UART_GetPinStatus
-                0x102e39b4       0x68 libs/gcc/app_start.lib(uart.o)
-                0x102e39b4                Ql_UART_GetPinStatus
+                0x102e28e4       0x68 libs/gcc/app_start.lib(uart.o)
+                0x102e28e4                Ql_UART_GetPinStatus
 
 .text.Ql_UART_SendEscap
-                0x102e3a1c       0x60
+                0x102e294c       0x60
  .text.Ql_UART_SendEscap
-                0x102e3a1c       0x60 libs/gcc/app_start.lib(uart.o)
-                0x102e3a1c                Ql_UART_SendEscap
+                0x102e294c       0x60 libs/gcc/app_start.lib(uart.o)
+                0x102e294c                Ql_UART_SendEscap
 
-.rodata         0x102e3a7c     0x1045
+.rodata         0x102e29ac     0x1045
  *(.rodata)
- .rodata        0x102e3a7c       0x48 build\gcc\obj/custom/config/custom_sys_cfg.o
-                0x102e3a80                SystemCfg
- .rodata        0x102e3ac4       0x54 build\gcc\obj/custom/config/sys_config.o
-                0x102e3ac4                GpioConfigTbl
-                0x102e3ac8                TaskConfig
- .rodata        0x102e3b18      0x100 build\gcc\obj/ril/src/ril_bluetooth.o
- .rodata        0x102e3c18       0x1a build\gcc\obj/ril/src/Ril_dtmf.o
- .rodata        0x102e3c32       0x4c build\gcc\obj/ril/src/ril_gps.o
- .rodata        0x102e3c7e        0xe build\gcc\obj/ril/src/ril_location.o
- .rodata        0x102e3c8c       0x5d build\gcc\obj/ril/src/ril_network.o
- .rodata        0x102e3ce9        0xa build\gcc\obj/ril/src/ril_ntp.o
- *fill*         0x102e3cf3        0x1 
- .rodata        0x102e3cf4      0xd90 build\gcc\obj/ril/src/ril_urc.o
- .rodata        0x102e4a84        0x8 build\gcc\obj/custom/main.o
- .rodata        0x102e4a8c       0x16 libs/gcc/app_start.lib(ql_main.o)
- .rodata        0x102e4aa2        0x4 libs/gcc/app_start.lib(ril_main.o)
- .rodata        0x102e4aa6       0x1b libs/gcc/app_start.lib(system.o)
+ .rodata        0x102e29ac       0x48 build\gcc\obj/custom/config/custom_sys_cfg.o
+                0x102e29b0                SystemCfg
+ .rodata        0x102e29f4       0x54 build\gcc\obj/custom/config/sys_config.o
+                0x102e29f4                GpioConfigTbl
+                0x102e29f8                TaskConfig
+ .rodata        0x102e2a48      0x100 build\gcc\obj/ril/src/ril_bluetooth.o
+ .rodata        0x102e2b48       0x1a build\gcc\obj/ril/src/Ril_dtmf.o
+ .rodata        0x102e2b62       0x4c build\gcc\obj/ril/src/ril_gps.o
+ .rodata        0x102e2bae        0xe build\gcc\obj/ril/src/ril_location.o
+ .rodata        0x102e2bbc       0x5d build\gcc\obj/ril/src/ril_network.o
+ .rodata        0x102e2c19        0xa build\gcc\obj/ril/src/ril_ntp.o
+ *fill*         0x102e2c23        0x1 
+ .rodata        0x102e2c24      0xd90 build\gcc\obj/ril/src/ril_urc.o
+ .rodata        0x102e39b4        0x8 build\gcc\obj/custom/main.o
+ .rodata        0x102e39bc       0x16 libs/gcc/app_start.lib(ql_main.o)
+ .rodata        0x102e39d2        0x4 libs/gcc/app_start.lib(ril_main.o)
+ .rodata        0x102e39d6       0x1b libs/gcc/app_start.lib(system.o)
 
-.rodata.str1.1  0x102e4ac1     0x1aa8
+.rodata.str1.1  0x102e39f1     0x1a21
  .rodata.str1.1
-                0x102e4ac1       0x25 build\gcc\obj/ril/src/ril_atResponse.o
+                0x102e39f1       0x25 build\gcc\obj/ril/src/ril_atResponse.o
                                  0x2e (size before relaxing)
  .rodata.str1.1
-                0x102e4ae6      0x470 build\gcc\obj/ril/src/ril_ble.o
+                0x102e3a16      0x470 build\gcc\obj/ril/src/ril_ble.o
                                 0x53e (size before relaxing)
  .rodata.str1.1
-                0x102e4f56      0x58d build\gcc\obj/ril/src/ril_ble_clinet.o
+                0x102e3e86      0x58d build\gcc\obj/ril/src/ril_ble_clinet.o
                                 0x852 (size before relaxing)
  .rodata.str1.1
-                0x102e54e3      0x3ad build\gcc\obj/ril/src/ril_bluetooth.o
+                0x102e4413      0x3ad build\gcc\obj/ril/src/ril_bluetooth.o
                                 0x4e3 (size before relaxing)
  .rodata.str1.1
-                0x102e5890       0xb7 build\gcc\obj/ril/src/Ril_dtmf.o
+                0x102e47c0       0xb7 build\gcc\obj/ril/src/Ril_dtmf.o
                                  0xcc (size before relaxing)
  .rodata.str1.1
-                0x102e5947      0x11a build\gcc\obj/ril/src/ril_gps.o
-                                0x14c (size before relaxing)
+                0x102e4877       0x52 build\gcc\obj/ril/src/ril_init.o
  .rodata.str1.1
-                0x102e5a61       0x52 build\gcc\obj/ril/src/ril_init.o
- .rodata.str1.1
-                0x102e5ab3       0x8a build\gcc\obj/ril/src/ril_location.o
+                0x102e48c9       0x8a build\gcc\obj/ril/src/ril_location.o
                                  0xca (size before relaxing)
  .rodata.str1.1
-                0x102e5b3d      0x11f build\gcc\obj/ril/src/ril_mqtt.o
+                0x102e4953      0x11f build\gcc\obj/ril/src/ril_mqtt.o
                                 0x15b (size before relaxing)
  .rodata.str1.1
-                0x102e5c5c       0xf8 build\gcc\obj/ril/src/ril_network.o
+                0x102e4a72       0xf8 build\gcc\obj/ril/src/ril_network.o
                                 0x112 (size before relaxing)
  .rodata.str1.1
-                0x102e5d54       0x79 build\gcc\obj/ril/src/ril_sim.o
+                0x102e4b6a       0x79 build\gcc\obj/ril/src/ril_sim.o
                                  0xaf (size before relaxing)
  .rodata.str1.1
-                0x102e5dcd      0x1b2 build\gcc\obj/ril/src/ril_urc.o
+                0x102e4be3      0x1b2 build\gcc\obj/ril/src/ril_urc.o
                                 0x1b9 (size before relaxing)
  .rodata.str1.1
-                0x102e5f7f        0xa build\gcc\obj/ril/src/ril_util.o
+                0x102e4d95        0xa build\gcc\obj/ril/src/ril_util.o
                                  0x16 (size before relaxing)
  .rodata.str1.1
-                0x102e5f89      0x1e0 build\gcc\obj/custom/main.o
-                                0x1e5 (size before relaxing)
+                0x102e4d9f      0x273 build\gcc\obj/custom/main.o
+                                0x274 (size before relaxing)
  .rodata.str1.1
-                0x102e6169       0x19 libs/gcc/app_start.lib(memory.o)
+                0x102e5012       0x19 libs/gcc/app_start.lib(memory.o)
  .rodata.str1.1
-                0x102e6182       0x51 libs/gcc/app_start.lib(ql_main.o)
+                0x102e502b       0x51 libs/gcc/app_start.lib(ql_main.o)
                                  0x56 (size before relaxing)
  .rodata.str1.1
-                0x102e61d3       0x2b libs/gcc/app_start.lib(ril_main.o)
+                0x102e507c       0x2b libs/gcc/app_start.lib(ril_main.o)
                                  0x32 (size before relaxing)
  .rodata.str1.1
-                0x102e61fe       0xa1 libs/gcc/app_start.lib(stdlib_func.o)
+                0x102e50a7       0xa1 libs/gcc/app_start.lib(stdlib_func.o)
  .rodata.str1.1
-                0x102e629f       0x3d libs/gcc/app_start.lib(system.o)
+                0x102e5148       0x3d libs/gcc/app_start.lib(system.o)
  .rodata.str1.1
-                0x102e62dc      0x140 libs/gcc/app_start.lib(taskMngt.o)
+                0x102e5185      0x140 libs/gcc/app_start.lib(taskMngt.o)
  .rodata.str1.1
-                0x102e641c       0x45 libs/gcc/app_start.lib(timer.o)
+                0x102e52c5       0x45 libs/gcc/app_start.lib(timer.o)
  .rodata.str1.1
-                0x102e6461      0x108 libs/gcc/app_start.lib(uart.o)
+                0x102e530a      0x108 libs/gcc/app_start.lib(uart.o)
 
-.rel.dyn        0x102e656c        0x0
+.rel.dyn        0x102e5414        0x0
  .rel.iplt      0x00000000        0x0 build\gcc\obj/custom/config/custom_sys_cfg.o
 
-.data           0xf03d2000       0xc0 load address 0x102e6570
-                0x102e6570                PROVIDE (__data_load, LOADADDR (.data))
+.data           0xf03d2000       0xd0 load address 0x102e5418
+                0x102e5418                PROVIDE (__data_load, LOADADDR (.data))
                 0xf03d2000                PROVIDE (__data_start, .)
  *(.data)
  .data          0xf03d2000        0x1 build\gcc\obj/ril/src/ril_bluetooth.o
@@ -2134,80 +2055,88 @@ text            0x102db070      0xe40
                 0xf03d200c                g_InitCmds
  .data          0xf03d2024       0x38 build\gcc\obj/ril/src/ril_urc.o
                 0xf03d2024                mqtt_urc_param
- .data          0xf03d205c       0x38 build\gcc\obj/custom/main.o
- .data          0xf03d2094       0x18 libs/gcc/app_start.lib(ql_func.o)
-                0xf03d2094                api_notsup
- .data          0xf03d20ac        0x4 libs/gcc/app_start.lib(ril_aux.o)
-                0xf03d20ac                g_ril_auxTaskId
- .data          0xf03d20b0       0x10 libs/gcc/app_start.lib(ril_main.o)
-                0xf03d20c0                . = ALIGN (0x8)
-                0xf03d20c0                PROVIDE (_edata, .)
+ .data          0xf03d205c       0x44 build\gcc\obj/custom/main.o
+                0xf03d205c                clientID
+                0xf03d2069                username
+                0xf03d2080                temp_val
+                0xf03d2084                topic
+ .data          0xf03d20a0       0x18 libs/gcc/app_start.lib(ql_func.o)
+                0xf03d20a0                api_notsup
+ .data          0xf03d20b8        0x4 libs/gcc/app_start.lib(ril_aux.o)
+                0xf03d20b8                g_ril_auxTaskId
+ .data          0xf03d20bc       0x10 libs/gcc/app_start.lib(ril_main.o)
+                0xf03d20d0                . = ALIGN (0x8)
+ *fill*         0xf03d20cc        0x4 
+                0xf03d20d0                PROVIDE (_edata, .)
 
-.igot.plt       0xf03d20c0        0x0 load address 0x102e6630
+.igot.plt       0xf03d20d0        0x0 load address 0x102e54e8
  .igot.plt      0x00000000        0x0 build\gcc\obj/custom/config/custom_sys_cfg.o
 
-.bss            0xf03d20c0     0x1684 load address 0x102e6630
-                0xf03d20c0                PROVIDE (__bss_start__, .)
+.bss            0xf03d20d0     0x1404 load address 0x102e54e8
+                0xf03d20d0                PROVIDE (__bss_start__, .)
  *(.bss)
- .bss           0xf03d20c0        0x4 build\gcc\obj/ril/src/ril_atResponse.o
- .bss           0xf03d20c4        0x4 build\gcc\obj/ril/src/ril_audio.o
-                0xf03d20c4                cb_aud_play
- .bss           0xf03d20c8        0x4 build\gcc\obj/ril/src/ril_ble.o
- .bss           0xf03d20cc      0x204 build\gcc\obj/ril/src/ril_ble_clinet.o
- .bss           0xf03d22d0       0x98 build\gcc\obj/ril/src/ril_bluetooth.o
- .bss           0xf03d2368        0x4 build\gcc\obj/ril/src/ril_custom.o
-                0xf03d2368                cb_rcvCoreData
- .bss           0xf03d236c       0x10 build\gcc\obj/ril/src/Ril_dtmf.o
- .bss           0xf03d237c        0x4 build\gcc\obj/ril/src/ril_gps.o
- .bss           0xf03d2380       0x18 build\gcc\obj/ril/src/ril_http.o
-                0xf03d2384                http_url_addr
-                0xf03d2388                http_url_addr_len
-                0xf03d238c                http_post_msg
-                0xf03d2390                http_post_msg_len
-                0xf03d2394                callback_http_dwnld
- .bss           0xf03d2398        0x4 build\gcc\obj/ril/src/ril_location.o
- .bss           0xf03d239c        0x4 build\gcc\obj/ril/src/ril_ntp.o
- .bss           0xf03d23a0        0x8 build\gcc\obj/ril/src/ril_urc.o
-                0xf03d23a0                FtpGet_IND_CB
-                0xf03d23a4                FtpPut_IND_CB
- .bss           0xf03d23a8      0x50c build\gcc\obj/custom/main.o
-                0xf03d25a9                connect_id
-                0xf03d25ac                timer_counter
-                0xf03d28b0                pub_message_id
- .bss           0xf03d28b4        0x8 libs/gcc/app_start.lib(memory.o)
- .bss           0xf03d28bc       0x24 libs/gcc/app_start.lib(ql_func.o)
-                0xf03d28bc                m_StartPlayAudioStream
-                0xf03d28c0                m_get_api_ptr
-                0xf03d28c4                m_StopPlayAudioStream
-                0xf03d28c8                m_GetRelativeTime_Counter
-                0xf03d28cc                m_SecondToTicks
-                0xf03d28d0                m_MillisecondToTicks
-                0xf03d28d4                m_CalendarTime2LocalTime
-                0xf03d28d8                m_osChangeTaskPriority
-                0xf03d28dc                m_create_api_hash
- .bss           0xf03d28e0       0x10 libs/gcc/app_start.lib(ql_main.o)
-                0xf03d28e4                runinfo
- .bss           0xf03d28f0        0x1 libs/gcc/app_start.lib(ril_aux.o)
-                0xf03d28f0                g_ril_auxTaskReady
- *fill*         0xf03d28f1        0x3 
- .bss           0xf03d28f4      0xc34 libs/gcc/app_start.lib(ril_main.o)
- .bss           0xf03d3528       0x40 libs/gcc/app_start.lib(stdlib_func.o)
- .bss           0xf03d3568       0x14 libs/gcc/app_start.lib(system.o)
- .bss           0xf03d357c       0x40 libs/gcc/app_start.lib(taskMngt.o)
- .bss           0xf03d35bc       0x10 libs/gcc/app_start.lib(timer.o)
- .bss           0xf03d35cc       0x3c libs/gcc/app_start.lib(uart.o)
-                0xf03d3608                . = ALIGN (0x8)
-                0xf03d3608                PROVIDE (__bss_end__, .)
- COMMON         0xf03d3608      0x124 build\gcc\obj/ril/src/ril_telephony.o
-                0xf03d3608                g_comingCall
- COMMON         0xf03d372c       0x14 libs/gcc/app_start.lib(ql_main.o)
-                0xf03d372c                Ql_snprintf
-                0xf03d3730                Ql_sprintf
-                0xf03d3734                Ql_Debug_Trace
-                0xf03d3738                Ql_vsprintf
-                0xf03d373c                Ql_sscanf
- COMMON         0xf03d3740        0x4 libs/gcc/app_start.lib(ril_main.o)
-                0xf03d3740                MQTT_Recvhandler
+ .bss           0xf03d20d0        0x4 build\gcc\obj/ril/src/ril_atResponse.o
+ .bss           0xf03d20d4        0x4 build\gcc\obj/ril/src/ril_audio.o
+                0xf03d20d4                cb_aud_play
+ .bss           0xf03d20d8        0x4 build\gcc\obj/ril/src/ril_ble.o
+ .bss           0xf03d20dc      0x204 build\gcc\obj/ril/src/ril_ble_clinet.o
+ .bss           0xf03d22e0       0x98 build\gcc\obj/ril/src/ril_bluetooth.o
+ .bss           0xf03d2378        0x4 build\gcc\obj/ril/src/ril_custom.o
+                0xf03d2378                cb_rcvCoreData
+ .bss           0xf03d237c       0x10 build\gcc\obj/ril/src/Ril_dtmf.o
+ .bss           0xf03d238c        0x4 build\gcc\obj/ril/src/ril_gps.o
+ .bss           0xf03d2390       0x18 build\gcc\obj/ril/src/ril_http.o
+                0xf03d2394                http_url_addr
+                0xf03d2398                http_url_addr_len
+                0xf03d239c                http_post_msg
+                0xf03d23a0                http_post_msg_len
+                0xf03d23a4                callback_http_dwnld
+ .bss           0xf03d23a8        0x4 build\gcc\obj/ril/src/ril_location.o
+ .bss           0xf03d23ac        0x4 build\gcc\obj/ril/src/ril_ntp.o
+ .bss           0xf03d23b0        0x8 build\gcc\obj/ril/src/ril_urc.o
+                0xf03d23b0                FtpGet_IND_CB
+                0xf03d23b4                FtpPut_IND_CB
+ .bss           0xf03d23b8      0x20c build\gcc\obj/custom/main.o
+                0xf03d25ba                connect_id
+                0xf03d25bb                passwd
+                0xf03d25bc                pub_message_id
+                0xf03d25c0                wait_tick
+ .bss           0xf03d25c4        0x8 libs/gcc/app_start.lib(memory.o)
+ .bss           0xf03d25cc       0x24 libs/gcc/app_start.lib(ql_func.o)
+                0xf03d25cc                m_StartPlayAudioStream
+                0xf03d25d0                m_get_api_ptr
+                0xf03d25d4                m_StopPlayAudioStream
+                0xf03d25d8                m_GetRelativeTime_Counter
+                0xf03d25dc                m_SecondToTicks
+                0xf03d25e0                m_MillisecondToTicks
+                0xf03d25e4                m_CalendarTime2LocalTime
+                0xf03d25e8                m_osChangeTaskPriority
+                0xf03d25ec                m_create_api_hash
+ .bss           0xf03d25f0       0x10 libs/gcc/app_start.lib(ql_main.o)
+                0xf03d25f4                runinfo
+ .bss           0xf03d2600        0x1 libs/gcc/app_start.lib(ril_aux.o)
+                0xf03d2600                g_ril_auxTaskReady
+ *fill*         0xf03d2601        0x3 
+ .bss           0xf03d2604      0xc34 libs/gcc/app_start.lib(ril_main.o)
+ .bss           0xf03d3238       0x40 libs/gcc/app_start.lib(stdlib_func.o)
+ .bss           0xf03d3278       0x14 libs/gcc/app_start.lib(system.o)
+ .bss           0xf03d328c       0x40 libs/gcc/app_start.lib(taskMngt.o)
+ .bss           0xf03d32cc       0x10 libs/gcc/app_start.lib(timer.o)
+ .bss           0xf03d32dc       0x3c libs/gcc/app_start.lib(uart.o)
+                0xf03d3318                . = ALIGN (0x8)
+                0xf03d3318                PROVIDE (__bss_end__, .)
+ COMMON         0xf03d3318      0x124 build\gcc\obj/ril/src/ril_telephony.o
+                0xf03d3318                g_comingCall
+ COMMON         0xf03d343c       0x80 build\gcc\obj/custom/main.o
+                0xf03d343c                mqtt_payload
+ COMMON         0xf03d34bc       0x14 libs/gcc/app_start.lib(ql_main.o)
+                0xf03d34bc                Ql_snprintf
+                0xf03d34c0                Ql_sprintf
+                0xf03d34c4                Ql_Debug_Trace
+                0xf03d34c8                Ql_vsprintf
+                0xf03d34cc                Ql_sscanf
+ COMMON         0xf03d34d0        0x4 libs/gcc/app_start.lib(ril_main.o)
+                0xf03d34d0                MQTT_Recvhandler
 LOAD build\gcc\obj/custom/config/custom_sys_cfg.o
 LOAD build\gcc\obj/custom/config/sys_config.o
 LOAD build\gcc\obj/ril/src/ril_alarm.o
@@ -2401,17 +2330,9 @@ OUTPUT(build\gcc/APPGS3MDM32A01.elf elf32-littlearm)
  .ARM.attributes
                 0x000005f5       0x16 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x0000060b       0x18 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_addsubdf3.o)
+                0x0000060b       0x18 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_fixdfsi.o)
  .ARM.attributes
-                0x00000623       0x18 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_fixdfsi.o)
- .ARM.attributes
-                0x0000063b       0x18 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_truncdfsf2.o)
- .ARM.attributes
-                0x00000653       0x18 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_addsubsf3.o)
- .ARM.attributes
-                0x0000066b       0x18 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_muldivsf3.o)
- .ARM.attributes
-                0x00000683       0x18 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_fixsfsi.o)
+                0x00000623       0x18 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/lib/gcc/arm-none-eabi/4.7.2/thumb/libgcc.a(_arm_truncdfsf2.o)
 
 .debug_frame    0x00000000       0x84
  .debug_frame   0x00000000       0x38 C:\Users\admin\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_EABI/arm-none-eabi/lib/thumb/libc.a(lib_a-memcpy.o)

@@ -276,25 +276,10 @@ example/utility.c:42:11: warning: unused variable 'pChar2' [-Wunused-variable]
 example/utility.c: In function 'Analyse_Command':
 example/utility.c:103:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
 example/utility.c:120:17: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-custom/main.c:1:0: warning: "__CUSTOMER_CODE__" redefined [enabled by default]
-<command-line>:0:0: note: this is the location of the previous definition
-custom/main.c: In function 'APP_DEBUG':
-custom/main.c:31:5: warning: implicit declaration of function 'Ql_vsnprintf' [-Wimplicit-function-declaration]
-custom/main.c: In function 'proc_main_task':
-custom/main.c:131:5: warning: implicit declaration of function 'RIL_BT_Initialize' [-Wimplicit-function-declaration]
-custom/main.c:113:9: warning: unused variable 'ret' [-Wunused-variable]
 custom/main.c: In function 'Callback_Timer':
-custom/main.c:235:9: warning: pointer targets in passing argument 2 of 'RIL_MQTT_QMTOPEN' differ in signedness [-Wpointer-sign]
-In file included from custom/main.c:14:0:
+custom/main.c:188:13: warning: pointer targets in passing argument 2 of 'RIL_MQTT_QMTOPEN' differ in signedness [-Wpointer-sign]
+In file included from custom/main.c:11:0:
 ril/inc/ril_mqtt.h:192:5: note: expected 'u8 *' but argument is of type 'char *'
-custom/main.c:256:13: warning: pointer targets in passing argument 1 of 'RIL_GPS_Read' differ in signedness [-Wpointer-sign]
-In file included from custom/main.c:18:0:
-ril/inc/ril_gps.h:107:5: note: expected 'u8 *' but argument is of type 'char *'
-custom/main.c:256:13: warning: pointer targets in passing argument 2 of 'RIL_GPS_Read' differ in signedness [-Wpointer-sign]
-In file included from custom/main.c:18:0:
-ril/inc/ril_gps.h:107:5: note: expected 'u8 *' but argument is of type 'char *'
-custom/main.c: At top level:
-custom/main.c:23:11: warning: 'm_RxBuf_Uart' defined but not used [-Wunused-variable]
 custom/fota/src/fota_ftp.c: In function 'FTP_FotaMain':
 custom/fota/src/fota_ftp.c:44:9: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
 custom/fota/src/fota_ftp.c: In function 'FTP_Callback_OnDownload':
