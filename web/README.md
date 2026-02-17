@@ -1,8 +1,9 @@
 # 📡 Pet‑Tracker — Hybrid IoT Backend (MQTT + HTTP)
 
-Backend سبک و self‑hosted برای پروژه‌های IoT (مثل MC60) با معماری **Hybrid**:
-- **MQTT** برای ingest داده
-- **HTTP** برای API و Dashboard (Leaflet / Frontend ساده)
+A lightweight, fully self‑hosted IoT backend for MC60‑based projects using a Hybrid Architecture:
+
+- **MQTT** for device data ingestion
+- **HTTP** for REST API and dashboard access (simple Leaflet frontend)
 
 
 ---
